@@ -4,14 +4,15 @@ Gowalla is a location-based social networking website where users share their lo
 ### Example of check-in information
 <table class="tg">
   <tr>
-    <th class="tg-yw4l">[user]</th>
-    <th class="tg-yw4l">| [check-in time]</th>
-    <th class="tg-yw4l">| [latitude] |</th>
-    <th class="tg-yw4l">[longitude]|</th>
-    <th class="tg-yw4l">[location id]</th>
+    <th class="tg-yw4l">user</th>
+    <th class="tg-yw4l">check-in time</th>
+    <th class="tg-yw4l">latitude</th>
+    <th class="tg-yw4l">longitude</th>
+    <th class="tg-yw4l">location id</th>
   </tr>
   <tr>
-    <td class="tg-yw4l">196514 | 2010-07-24T13:45:06Z</td>
+    <td class="tg-yw4l">196514</td>
+    <td class="tg-yw4l">2010-07-24T13:45:06Z</td>
     <td class="tg-yw4l">53.3648119</td>
     <td class="tg-yw4l">-2.2723465833</td>
     <td class="tg-yw4l">145064</td>
