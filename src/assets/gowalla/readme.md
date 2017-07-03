@@ -1,4 +1,4 @@
-#The Gowalla Dataset 
+# The Gowalla Dataset 
 Gowalla is a location-based social networking website where users share their locations by checking-in. The friendship network is undirected and was collected using their public API, and consists of 196,591 nodes and 950,327 edges. We have collected a total of 6,442,890 check-ins of these users over the period of Feb. 2009 - Oct. 2010. 
 
 # Example of check-in information
@@ -12,5 +12,5 @@ Gowalla is a location-based social networking website where users share their lo
 196514  2010-07-24T13:43:18Z    53.3679640626   -2.2792943689   207763
 196514  2010-07-24T13:41:10Z    53.364905       -2.270824       1042822	
 
-#Get the data here...
+# Get the data here...
 url: https://snap.stanford.edu/data/loc-gowalla.html
