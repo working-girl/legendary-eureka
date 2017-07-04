@@ -2,6 +2,13 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0. (y)
 
+## Enable browser java on linux
+```sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install icedtea-plugin
+sudo ln -s /usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/IcedTeaPlugin.so /usr/lib/mozilla/plugins/libnpjp2.so
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
