@@ -11,7 +11,9 @@ let crg = require('country-reverse-geocoding').country_reverse_geocoding();
 })
 
 export class CountryComponent implements OnInit {
-  countryName:string = 'Rusland';
+  validCoords:boolean = false;
+  countryName:string = 'Djurs Sommerland';
+  countryCode:string = 'DSL';
   
   constructor() {  }
   
@@ -19,6 +21,13 @@ export class CountryComponent implements OnInit {
 
   findCountry(lat:number, lng:number) {
 	let country = crg.get_country(lat, lng);
-  	this.countryName = country.name;
+	if(country !== null)
+	{
+		this.validCoords = true;
+		this.countryName = country.name;
+  		this.countryCode = country.code;
+	} else {
+		this.validCoords = false;
+	}
   }
 }
