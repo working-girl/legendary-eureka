@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchQuery } from '../models/search-query.model';
 
 @Component({
   selector: 'app-searchbar',
@@ -7,16 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchbarComponent implements OnInit {
 
-  input: string = ''
-
-  constructor() { }
+  constructor(public searchinfo: SearchQuery) { }
 
   ngOnInit() {
   }
-
-  getGowalla(searchInput: string) {
-  	this.input = searchInput 
-  	console.log("You entered " + this.input)
-  }  
-
 }

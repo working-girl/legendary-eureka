@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchQuery } from '../models/search-query.model';
 
 @Component({
   selector: 'app-idcard',
@@ -7,15 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdcardComponent implements OnInit {
 
-  userid = "234532";
-
-  constructor() { }
+  constructor(public searchinfo: SearchQuery) {}
 
   ngOnInit() {
   }
 
   getActivity() {
-  	console.log('it works!')
+  	console.log("it worked!")
   }
 
 }

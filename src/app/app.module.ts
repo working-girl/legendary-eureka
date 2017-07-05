@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { IdcardComponent } from './idcard/idcard.component';
+import { SearchQuery } from './models/search-query.model';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { IdcardComponent } from './idcard/idcard.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [SearchQuery],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
