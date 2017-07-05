@@ -12,10 +12,9 @@ let crg = require('country-reverse-geocoding').country_reverse_geocoding();
 
 export class CountryComponent implements OnInit {
   validCoords:boolean = false;
-  countryName:string = 'Djurs Sommerland';
+  countryName:string = 'Disneyland';
   countryCode:string = 'DSL';
-  flagCode:string = this.countryCode.substring(0,2);
-  
+    
   constructor() {  }
   
   ngOnInit() { }
@@ -27,7 +26,6 @@ export class CountryComponent implements OnInit {
 		this.validCoords = true;
 		this.countryName = country.name;
   		this.countryCode = country.code;
-  		this.flagCode = this.countryCode.substring(0,2);
 	} else {
 		this.validCoords = false;
 	}

@@ -4,8 +4,6 @@
 	<input type="number" step="0.001" name="long" placeholder="longtitude" [(ngModel)]="lng"><br>
 	<input type="submit" name="coordbtn" value="Find Country" (click)="findCountry(lat, lng)">
 	<p></p>
-	<p *ngIf="validCoords">
-		{{countryName}}, {{countryCode}}, <img src="../assets/flags/{{flagCode | lowercase}}.png">
-	</p>
-	<pre>{{validCoords}}</pre>
+	<div *ngIf="validCoords; else elseBlock">{{countryName}}, {{countryCode}}, <img src="../assets/flags/{{countryCode}}.png"></div>
+    <ng-template #elseBlock>Please enter valid coordinates (eg 23.03 32.22)</ng-template>
 </div>
