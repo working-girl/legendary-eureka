@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { NetworkComponent } from './network/network.component';
 import { FlagsComponent } from './flags/flags.component';
+import { StatsComponent } from './stats/stats.component';
+
 
 const routes: Routes = [
   {
@@ -15,6 +17,7 @@ const routes: Routes = [
   	path: 'home',
   	component: HomeComponent,
   	  children: [
+
   	  	{
   	  		path: '',
   	  		redirectTo: 'network',
@@ -22,7 +25,7 @@ const routes: Routes = [
   	  	},
   	  	{
   	  		path: 'network',
-  	  		component: NetworkComponent
+  	  		component: NetworkComponent,
   	  	},
   	  	{
   	  		path: 'flag',

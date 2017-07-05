@@ -14,6 +14,8 @@ import { DescCardComponent } from './desc-card/desc-card.component';
 import { TabviewComponent } from './tabview/tabview.component';
 import { FlagsComponent } from './flags/flags.component';
 import { NetworkComponent } from './network/network.component';
+import { StatsComponent } from './stats/stats.component';
+import { NavStatsComponent } from './nav-stats/nav-stats.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { NetworkComponent } from './network/network.component';
     DescCardComponent,
     TabviewComponent,
     FlagsComponent,
-    NetworkComponent
+    NetworkComponent,
+    StatsComponent,
+    NavStatsComponent
   ],
   imports: [
     BrowserModule,

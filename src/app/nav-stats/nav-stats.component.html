@@ -1,0 +1,44 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" (click)="setInt()">Interactions</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" (click)="setCheck()">Checkins</a>
+  </li>
+</ul>
+<div *ngIf="cond1; else cond2">
+	<ul class="list-group">
+	  <li class="list-group-item justify-content-between">
+	    Dacilisis in
+	    <span class="badge badge-default badge-pill">22</span>
+	  </li>
+	  <li class="list-group-item justify-content-between">
+	    Cras justo odio
+	    <span class="badge badge-default badge-pill">14</span>
+	  </li>
+	  <li class="list-group-item justify-content-between">
+	    Custo odio
+	    <span class="badge badge-default badge-pill">11</span>
+	  </li>  
+	  <li class="list-group-item justify-content-between">
+	    Dapibus ac facilisis in
+	    <span class="badge badge-default badge-pill">8</span>
+	  </li>
+	  <li class="list-group-item justify-content-between">
+	    Morbi leo risus
+	    <span class="badge badge-default badge-pill">5</span>
+	  </li>  
+	  <li class="list-group-item justify-content-between">
+	    Dapibus ac facilisis in
+	    <span class="badge badge-default badge-pill">2</span>
+	  </li>
+	  <li class="list-group-item justify-content-between">
+	    Morbi leo risus
+	    <span class="badge badge-default badge-pill">1</span>
+	  </li>
+	</ul>	
+</div>
+<ng-template #cond2>
+	ho
+</ng-template>	
+
