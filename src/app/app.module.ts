@@ -12,6 +12,8 @@ import { IdcardComponent } from './idcard/idcard.component';
 import { SearchQuery } from './models/search-query.model';
 import { DescCardComponent } from './desc-card/desc-card.component';
 import { TabviewComponent } from './tabview/tabview.component';
+import { FlagsComponent } from './flags/flags.component';
+import { NetworkComponent } from './network/network.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { TabviewComponent } from './tabview/tabview.component';
     SearchbarComponent,
     IdcardComponent,
     DescCardComponent,
-    TabviewComponent
+    TabviewComponent,
+    FlagsComponent,
+    NetworkComponent
   ],
   imports: [
     BrowserModule,

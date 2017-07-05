@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { NetworkComponent } from './network/network.component';
+import { FlagsComponent } from './flags/flags.component';
 
 const routes: Routes = [
   {
@@ -11,7 +13,22 @@ const routes: Routes = [
   },
   {
   	path: 'home',
-  	component: HomeComponent 
+  	component: HomeComponent,
+  	  children: [
+  	  	{
+  	  		path: '',
+  	  		redirectTo: 'network',
+  	  		pathMatch: 'full'
+  	  	},
+  	  	{
+  	  		path: 'network',
+  	  		component: NetworkComponent
+  	  	},
+  	  	{
+  	  		path: 'flag',
+  	  		component: FlagsComponent
+  	  	}
+  	  ] 
   }
 ];
 
