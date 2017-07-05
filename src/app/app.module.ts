@@ -11,6 +11,7 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
 import { IdcardComponent } from './idcard/idcard.component';
 import { SearchQuery } from './models/search-query.model';
 import { DescCardComponent } from './desc-card/desc-card.component';
+import { TabviewComponent } from './tabview/tabview.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DescCardComponent } from './desc-card/desc-card.component';
     HomeComponent,
     SearchbarComponent,
     IdcardComponent,
-    DescCardComponent
+    DescCardComponent,
+    TabviewComponent
   ],
   imports: [
     BrowserModule,
