@@ -1,4 +1,4 @@
-/*import { Component, ElementRef, NgZone, OnDestroy, OnInit, Input } from '@angular/core';
+import { Component, ElementRef, NgZone, OnDestroy, OnInit, Input } from '@angular/core';
 
 
 import { D3Service, D3, Selection } from 'd3-ng2-service';
@@ -27,13 +27,23 @@ export class NetworkChart2Component implements OnInit, OnDestroy {
 
   ngOnInit() {
 
+    console.log(this.graph)
+
   	let d3 = this.d3
     let d3ParentElement: Selection<HTMLElement, any, null, undefined>;
     let d3Svg: Selection<SVGSVGElement, any, null, undefined>;
     let d3G: Selection<SVGGElement, any, null, undefined>;
     let width: number;
     let height: number; 
-    
+    let color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    let simulation = d3.forceSimulation()
+      .force("link", d3.forceLink().id(function(d) { return d.id; }))
+      .force("charge", d3.forceManyBody().strength(-400))
+      .force("center", d3.forceCenter(this.width / 2, this.height / 2));
+
+
+        
     if (this.parentNativeElement !== null) {
 
       d3ParentElement = d3.select(this.parentNativeElement);
@@ -44,7 +54,27 @@ export class NetworkChart2Component implements OnInit, OnDestroy {
 
       d3G = d3Svg.append<SVGGElement>('g');
 
+      let link = d3Svg.append("g")
+        .attr("class", "edges")
+        .selectAll("line")
+        .data(this.graph.edges)
+        .enter().append("line")
+        .attr("stroke-width", function(d) { return Math.sqrt(d.value);});
+
+      let node = d3Svg.append("g")
+        .attr("class", "nodes")
+        .selectAll("circle")
+        .data(this.graph.nodes)
+        .enter().append("circle")
+          .attr("r", 5)
+          .attr("fill", function(d) { return color(d.group); })
+          /*.call(d3.drag()
+              .on("start", this.dragstarted)
+              .on("drag", this.dragged)
+              .on("end", this.dragended));*/
+
+
     }     	
   }
 
-}*/
+}
