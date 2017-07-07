@@ -3,8 +3,6 @@ import * as d3 from 'd3';
 
 //https://bl.ocks.org/mbostock/4062045
 
-declare var x: any
-declare var y: any
 
 @Component({
   selector: 'app-network-chart',
@@ -15,7 +13,7 @@ export class NetworkChartComponent implements OnInit {
 
   @ViewChild('chart') element: ElementRef
   @Input() private graph
-  private margin: any = { top: 20, bottom: 20, left: 20, right: 20};
+  private margin: any = { top: 20, bottom: 20, left: 0, right: 20};
   private chart: any;
 
   private host: d3.Selection
@@ -41,32 +39,19 @@ export class NetworkChartComponent implements OnInit {
   }
 
   private setup(): void {
-    this.width = 960
-    this.height = 600
+    this.width = 850
+    this.height = 850
   }
 
   private buildSVG(): void {
     this.host.html("")
     this.svg = this.host.append("svg")
       .attr("viewBox", `0 0 ${this.width} ${this.height}`)
-      .append("g")
-      .attr("transform", `translate(${this.width / 2}, ${this.height / 2})`)
+      /*.append("g")
+      .attr("transform", `translate(${this.width / 2}, ${this.height / 2})`)*/
   }
 
-  private ticked(link,node) {
-      link
-          .attr("x1", function(d) { return d.source.x; })
-          .attr("y1", function(d) { return d.source.y; })
-          .attr("x2", function(d) { return d.target.x; })
-          .attr("y2", function(d) { return d.target.y; });
-
-      node
-          .attr("cx", function(d) { return d.x; })
-          .attr("cy", function(d) { return d.y; });
-
-      console.log(node)
-      console.log(link)    
-    }    
+   
 
   private drawGraph(){
     console.log(this.graph)
@@ -104,10 +89,27 @@ export class NetworkChartComponent implements OnInit {
 
      simulation
       .nodes(this.graph.nodes)
-      .on("tick", this.ticked(link,node));
+      .on("tick", ticked);
 
      simulation.force("link")
       .links(this.graph.edges);
+
+
+      function ticked() {
+        link
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+        node
+            .attr("cx", function(d) { return d.x; })
+            .attr("cy", function(d) { return d.y; });
+
+      console.log(node)
+      console.log(link)    
+    } 
+
     }
 
 
