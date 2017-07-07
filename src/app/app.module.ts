@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -16,6 +17,9 @@ import { FlagsComponent } from './flags/flags.component';
 import { NetworkComponent } from './network/network.component';
 import { StatsComponent } from './stats/stats.component';
 import { NavStatsComponent } from './nav-stats/nav-stats.component';
+
+import { NetworkService } from './network/network.service';
+import { NetworkChartComponent } from './network-chart/network-chart.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +33,16 @@ import { NavStatsComponent } from './nav-stats/nav-stats.component';
     FlagsComponent,
     NetworkComponent,
     StatsComponent,
-    NavStatsComponent
+    NavStatsComponent,
+    NetworkChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [SearchQuery],
+  providers: [SearchQuery, NetworkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
