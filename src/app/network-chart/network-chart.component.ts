@@ -85,7 +85,7 @@ export class NetworkChartComponent implements OnChanges, AfterViewInit {
       .data(this.graph.nodes)
       .enter().append("circle")
         .attr("r", 5)
-        .attr("fill", function(d) { return color(d.group); })
+        .attr("fill", function(d) {return color(d.group); })
         .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
