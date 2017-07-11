@@ -13,9 +13,8 @@ export class NetworkChartComponent implements OnChanges, AfterViewInit {
 
   @ViewChild('network') element: ElementRef
   @Input() private graph
-  private margin: any 
-  private chart: any
 
+  private margin: any 
   private host: d3.Selection
   private svg: d3.Selection
   private width: number
@@ -32,7 +31,7 @@ export class NetworkChartComponent implements OnChanges, AfterViewInit {
     this.setup()
     this.buildSVG()
     this.drawGraph()
-    console.log(this.htmlElement)
+    //console.log(this.htmlElement)
 
   }
 
@@ -55,7 +54,7 @@ export class NetworkChartComponent implements OnChanges, AfterViewInit {
     this.host.html('')
     this.svg = this.host.append("svg")
       .attr("viewBox", `0 0 ${this.width} ${this.height}`)
-      .append("g")
+      //.append("g")
       //.attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
   }
 
@@ -68,7 +67,7 @@ export class NetworkChartComponent implements OnChanges, AfterViewInit {
       .force("charge", d3.forceManyBody().strength(-400))
       .force("center", d3.forceCenter(this.width / 2, this.height / 2));
     
-       console.log(simulation)
+      //console.log(simulation)
    
     var g = this.svg.append("g")
 
