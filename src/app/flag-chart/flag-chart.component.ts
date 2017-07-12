@@ -1,6 +1,6 @@
 import { Component, OnChanges, Input, ViewChild, ElementRef } from '@angular/core';
 import * as d3 from 'd3';
-import * as canvas from 'canvas';
+// import * as canvas from 'canvas';
 import * as d3v4cloud from 'd3-v4-cloud';
 
 @Component({
