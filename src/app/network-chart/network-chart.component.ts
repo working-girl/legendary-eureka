@@ -123,10 +123,3 @@ export class NetworkChartComponent implements AfterViewInit {
     d.fy = d.y;
   }
 }
-
-	
-
-	
-
-
-  
