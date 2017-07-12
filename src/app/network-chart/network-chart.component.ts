@@ -37,9 +37,7 @@ export class NetworkChartComponent implements OnChanges, AfterViewInit {
 
   /*Chart will be rebuild every time the @Input is updated*/
   ngOnChanges(): void{
-    /*if (!this.graph.length === 0 || !this.host) return;
-
-    this.setup()
+  /*  this.setup()
     this.buildSVG()
     this.drawGraph()*/
   }

@@ -1,21 +1,18 @@
-import { Component, OnChanges, Input, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, OnChanges, Input, ViewChild, ElementRef } from '@angular/core';
 import * as d3 from 'd3';
 import * as canvas from 'canvas';
 import * as d3v4cloud from 'd3-v4-cloud';
-
-
-
-//https://codepen.io/znak/pen/rOgXoV
 
 @Component({
   selector: 'app-flag-chart',
   templateUrl: './flag-chart.component.html',
   styleUrls: ['./flag-chart.component.css']
 })
-export class FlagChartComponent implements OnChanges, AfterViewInit {
+export class FlagChartComponent implements OnChanges {
 
   @ViewChild('flagcloud') element: ElementRef
   @Input() private flagdata
+  @Input() private words
 
   private margin: any 
   private host: d3.Selection
@@ -27,22 +24,13 @@ export class FlagChartComponent implements OnChanges, AfterViewInit {
 
   constructor() { }
 
-  ngAfterViewInit() {
-    this.htmlElement = this.element.nativeElement
+  /*Chart will be rebuild every time the @Input is updated*/
+  ngOnChanges(): void{
+  	this.htmlElement = this.element.nativeElement
     this.host = d3.select(this.htmlElement)
     this.setup()
     this.buildSVG()
     this.drawFlagCloud()
-    //console.log(this.htmlElement)
-
-  }
-  /*Chart will be rebuild every time the @Input is updated*/
-  ngOnChanges(): void{
-    /*if (!this.graph.flagdata === 0 || !this.host) return;
-
-    this.setup()
-    this.buildSVG()
-    this.drawGraph()*/
   }
 
   private setup(): void {
@@ -55,27 +43,9 @@ export class FlagChartComponent implements OnChanges, AfterViewInit {
     this.host.html('')
     this.svg = this.host.append("svg")
       .attr("viewBox", `0 0 ${this.width} ${this.height}`)
-      //.append("g")
-      //.attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
-
-      //console.log(this.svg)
   }
 
   private drawFlagCloud() {
-
-  	let w = ["breakgin","break into","break off","breakgout","break up","breat",
-  	"breath","breathegin","breathegout","breathe","breathing","breed","brick","bridge","brief",
-  	"briefly","bright","brightly","brilliant","bringgdown","bringgforward","bringgout","bringgup",
-  	"broad","bring","bringgback","broadcat","broadly","broken","brother","brown","bruh","bubble","breakfat",
-  	"ability","able","about","above","abroad","abence","breakfast","than", "thi", "dadsa", "dajda", "lorum", 
-  	"abandon","abandoned","Hello","world", "normally", "you", "want", "more", "word","breakgin","breakginto",
-  	"breakgoff","breakgout","breakgup","breat","breath","breathegin","breathegout","breathe","breathing","breed",
-  	"brick","bridge","brief","briefly","bright","brightly","brilliant","bringgback","bringgdown","bringgforward","bringgout",
-  	"bringgup","bring","broad","broadcat","broadly","broken","brother","brown","bruh","bubble"	]    
-
-	let words = w.map(function(d) {
-	      		return {text: d, size: 10 + Math.random() * 150, test: "haha"};
-	    	})
 
 	let con = this.svg.append("g")
 
@@ -90,13 +60,13 @@ export class FlagChartComponent implements OnChanges, AfterViewInit {
 	let layout: any
 	layout = d3v4cloud.cloud()
 		.size([this.width, this.height])
-    	.words(words)
+    	.words(this.words)
 	    .padding(5)
 	    .rotate(function() { return ~~(Math.random() * 2) * 90; })
 	    .font("Impact")
 	    .fontSize(function(d) { return d.size; })
 
-	layout.on("end", draw(words, con, layout));
+	layout.on("end", draw(this.words, con, layout));
 	layout.start()
 
 	//console.log(layout)
