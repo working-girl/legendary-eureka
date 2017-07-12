@@ -5,11 +5,16 @@ import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { NetworkComponent } from './network/network.component';
 import { StatsComponent } from './stats/stats.component';
+import { TreeComponent } from './tree/tree.component';
 
 const routes: Routes = [
   {
     path: '',
     component: SearchbarComponent
+  },
+  {
+    path: 'tree',
+    component: TreeComponent,
   },
   {
   	path: 'home',

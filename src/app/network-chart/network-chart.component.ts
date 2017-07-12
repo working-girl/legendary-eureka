@@ -92,7 +92,7 @@ export class NetworkChartComponent implements AfterViewInit {
         );
 
     this.node.append("title")
-      .text(function(d) { return d.id; });
+      .text((d) => { return d.id; });
 
     this.simulation
       .nodes(this.netgraph.nodes)

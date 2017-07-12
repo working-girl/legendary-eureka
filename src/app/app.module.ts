@@ -19,6 +19,7 @@ import { NavStatsComponent } from './nav-stats/nav-stats.component';
 
 import { NetworkService } from './network/network.service';
 import { NetworkChartComponent } from './network-chart/network-chart.component';
+import { TreeComponent } from './tree/tree.component';
 
 //import { D3Service } from 'd3-ng2-service';
 //import { TestD3Component } from './test-d3/test-d3.component';
@@ -38,6 +39,7 @@ import { NetworkChartComponent } from './network-chart/network-chart.component';
     StatsComponent,
     NavStatsComponent,
     NetworkChartComponent,
+    TreeComponent,
  /*   TestD3Component,
     BrushZoomComponent,
     NetworkChart2Component*/
