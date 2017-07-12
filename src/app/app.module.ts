@@ -19,8 +19,6 @@ import { NavStatsComponent } from './nav-stats/nav-stats.component';
 
 import { NetworkService } from './network/network.service';
 import { NetworkChartComponent } from './network-chart/network-chart.component';
-import { FlagsComponent } from './flags/flags.component';
-import { FlagChartComponent } from './flag-chart/flag-chart.component';
 
 //import { D3Service } from 'd3-ng2-service';
 //import { TestD3Component } from './test-d3/test-d3.component';
@@ -40,8 +38,6 @@ import { FlagChartComponent } from './flag-chart/flag-chart.component';
     StatsComponent,
     NavStatsComponent,
     NetworkChartComponent,
-    FlagsComponent,
-    FlagChartComponent,
  /*   TestD3Component,
     BrushZoomComponent,
     NetworkChart2Component*/

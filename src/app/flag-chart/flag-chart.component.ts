@@ -1,7 +1,7 @@
 import { Component, OnChanges, Input, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 import * as d3 from 'd3';
-import * as canvas from 'canvas';
-import * as d3v4cloud from 'd3-v4-cloud';
+// import * as canvas from 'canvas';
+// import * as d3v4cloud from 'd3-v4-cloud';
 
 
 
@@ -28,12 +28,12 @@ export class FlagChartComponent implements OnChanges, AfterViewInit {
   constructor() { }
 
   ngAfterViewInit() {
-    this.htmlElement = this.element.nativeElement
+    /*this.htmlElement = this.element.nativeElement
     this.host = d3.select(this.htmlElement)
     this.setup()
     this.buildSVG()
     this.drawFlagCloud()
-    //console.log(this.htmlElement)
+    //console.log(this.htmlElement)*/
 
   }
   /*Chart will be rebuild every time the @Input is updated*/
@@ -45,7 +45,7 @@ export class FlagChartComponent implements OnChanges, AfterViewInit {
     this.drawGraph()*/
   }
 
-  private setup(): void {
+  /*private setup(): void {
     this.margin = { top: 5, bottom: 0, left: 0, right: 0 }
     this.width = this.htmlElement.clientWidth - this.margin.left - this.margin.right
     this.height = this.width * 0.5 - this.margin.top - this.margin.bottom
@@ -130,5 +130,5 @@ export class FlagChartComponent implements OnChanges, AfterViewInit {
   			return (~~(Math.random() * 6) - 3) * 30;
 		}
 	}
-  }
+  }*/
 }
