@@ -1,4 +1,4 @@
-export var treeData =
+export let treeData =
   {
     "name": "Top Level",
     "children": [
