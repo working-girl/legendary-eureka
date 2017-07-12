@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CountryComponent } from './country/country.component';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -52,6 +53,7 @@ import { WordsService } from './flags/words.service';
     AppRoutingModule,
     FormsModule,
     HttpModule
+    CountryComponent
   ],
   providers: [SearchQuery, NetworkService, WordsService], //D3Service
   bootstrap: [AppComponent]

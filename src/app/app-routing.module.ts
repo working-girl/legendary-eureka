@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CountryComponent } from './country/country.component';
 
 import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: '',
     component: SearchbarComponent
+  },
+  {
+    path: 'country',
+    component: CountryComponent
   },
   {
   	path: 'home',
