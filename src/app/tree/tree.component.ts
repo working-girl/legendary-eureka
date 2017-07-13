@@ -7,7 +7,7 @@ import * as d3 from 'd3'
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.css']
 })
-export class TreeComponent implements OnInit, AfterViewInit {
+export class TreeComponent implements AfterViewInit {
   private treemap:any;
   private root:any;
   // private diagonal:any;
@@ -17,20 +17,21 @@ export class TreeComponent implements OnInit, AfterViewInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  // ngOnInit() { }
 
   ngAfterViewInit() {
-    let margin = {top: 20, right: 90, bottom: 30, left: 90};
+    let margin = {top: 20, right: 120, bottom: 20, left: 120};
 	  let width = 960 - margin.right - margin.left;
-	  let height = 500 - margin.top - margin.bottom;
+	  let height = 800 - margin.top - margin.bottom;
   
 	  /*this.diagonal = d3.diagonal()
 	  				.projection(function(d) { return [d.y, d.x]; });*/
   
 	  this.svg = d3.select("app-tree").append("svg")
       	       .attr("width", width + margin.right + margin.left)
-      	       .attr("height", height + margin.top + margin.bottom)
-    		       .append("g")
+      	       .attr("height", height + margin.top + margin.bottom)//;
+               .append("g")
+    //let g = this.svg.append("g")
       	         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   
     this.i = 0;
