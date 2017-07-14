@@ -8,6 +8,7 @@ import * as d3v4cloud from 'd3-v4-cloud';
   templateUrl: './flag-chart.component.html',
   styleUrls: ['./flag-chart.component.css']
 })
+
 export class FlagChartComponent implements OnChanges {
 
   @ViewChild('flagcloud') element: ElementRef
@@ -20,7 +21,6 @@ export class FlagChartComponent implements OnChanges {
   private width: number
   private height: number
   private htmlElement: HTMLElement
-
 
   constructor() { }
 
@@ -51,11 +51,9 @@ export class FlagChartComponent implements OnChanges {
 
     let zoom_handler = d3.zoom()
         .on("zoom", zoom_actions);
-
     zoom_handler(this.svg); 
 
 	let color = d3.scaleOrdinal(d3.schemeCategory20);
-
 
 	let layout: any
 	layout = d3v4cloud.cloud()

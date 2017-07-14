@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { NetworkComponent } from './network/network.component';
 import { StatsComponent } from './stats/stats.component';
-import { FlagsComponent } from './flags/flags.component';
+import { TreeComponent } from './tree/tree.component';
 
 const routes: Routes = [
   {
@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'country',
     component: CountryComponent
+  },
+  {
+    path: 'tree',
+    component: TreeComponent,
   },
   {
   	path: 'home',
@@ -30,11 +34,7 @@ const routes: Routes = [
   	  	{
   	  		path: 'network',
   	  		component: NetworkComponent,
-  	  	},
-        {
-          path: 'flags',
-          component: FlagsComponent
-        }
+  	  	}
   	  ] 
   }
 ];
