@@ -13,6 +13,7 @@ export class TreeComponent implements AfterViewInit {
   // private diagonal:any;
   private svg:any;
   private i:number;
+  private r:number;
   private duration:number;
 
   constructor() { }
@@ -35,7 +36,8 @@ export class TreeComponent implements AfterViewInit {
       	         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
   
     this.i = 0;
-    this.duration = 750;
+    this.duration = 300;
+    this.r = 5;
     this.root = null;
   
     this.treemap = d3.tree().size([height, width]);
@@ -45,6 +47,8 @@ export class TreeComponent implements AfterViewInit {
 	  this.root.children.forEach((d) => {return this.collapse(d)});
 	  
 	  this.update(this.root);
+
+    // d3.select(self.frameElement).style("height", "800px");
   }
 
   collapse(d:any) {
@@ -62,7 +66,7 @@ export class TreeComponent implements AfterViewInit {
 	  let nodes = treeData.descendants();
     let links = treeData.descendants().slice(1);
 
-	// Normalize for fixed-depth.
+	  // Normalize for fixed-depth.
 	  nodes.forEach((d) => { d.y = d.depth * 180; });
 
   	// Update the nodes…
@@ -71,21 +75,21 @@ export class TreeComponent implements AfterViewInit {
 
   	// Enter any new nodes at the parent's previous position.
   	let nodeEnter = node.enter().append('g')
-					.attr('class', 'node')
-					.attr("transform", (d) => { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-					.on('click', (d)=>{ return this.click(d); });
+					          .attr('class', 'node')
+					          .attr("transform", (d) => { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+					          .on('click', (d)=>{ return this.click(d); });
 	
   	nodeEnter.append('circle')
   			     .attr('class', 'node')
 			       .attr('r', 1e-6)
-			       .style("fill", (d) => { return d._children ? "lightsteelblue" : "#fff"; });
+			       .style("fill", (d) => { console.log('now'); return d._children ? "lightsteelblue" : "#fff"; });
 	
   	nodeEnter.append("text")
-		  	 .attr("dy", ".35em")
-		  	 .attr("x", (d) => { return d.children || d._children ? -13 : 13; })
-		  	 .attr("text-anchor", (d) => { return d.children || d._children ? "end" : "start"; })
-		  	 .text((d) => { return d.data.name; });
-//		  .style("fill-opacity", 1e-6);
+		  	     .attr("dy", ".35em")
+		  	     .attr("x", (d) => { return d.children || d._children ? -13 : 13; })
+		  	     .attr("text-anchor", (d) => { return d.children || d._children ? "end" : "start"; })
+		  	     .text((d) => { return d.data.name; })
+       		   .style("fill-opacity", 0.5);
 
   	// Transition nodes to their new position.
   	let nodeUpdate = nodeEnter.merge(node);
@@ -95,12 +99,11 @@ export class TreeComponent implements AfterViewInit {
     		  .attr("transform", (d) => { return "translate(" + d.y + "," + d.x + ")"; });
 
   	nodeUpdate.select('circle')
-		  .attr('r', 10)
+		  .attr('r', this.r)
 		  .style("fill", (d) => { return d._children ? "lightsteelblue" : "#fff"; })
-		  .attr('cursor', 'pointer');
 	
   	/*nodeUpdate.select("text")
-		  .style("fill-opacity", 1);*/
+		          .style("fill-opacity", 0.5);*/
 	
   	// Transition exiting nodes to the parent's new position.
   	let nodeExit = node.exit().transition()
@@ -109,10 +112,10 @@ export class TreeComponent implements AfterViewInit {
 		               .remove();
 	
   	nodeExit.select('circle')
-		  .attr('r', 1e-6);
+		        .attr('r', 1e-6);
 	
   	nodeExit.select('text')
-		  .style('fill-opacity', 1e-6);
+		        .style('fill-opacity', 1e-6);
 	
   	// Update the links…
   	let link = this.svg.selectAll('path.link')
@@ -144,8 +147,8 @@ export class TreeComponent implements AfterViewInit {
 	
   	// Stash the old positions for transition.
   	nodes.forEach((d) => {
-		d.x0 = d.x;
-		d.y0 = d.y;
+		  d.x0 = d.x;
+		  d.y0 = d.y;
   	});
   }
 
@@ -159,12 +162,10 @@ export class TreeComponent implements AfterViewInit {
 
   click(d:any) {
   	if (d.children) {
-  		console.log('children')
-		  d._children = d.children;
+  		d._children = d.children;
 		  d.children = null;
   	} else {
-  	  console.log('no children')
-		  d.children = d._children;
+  	  d.children = d._children;
 		  d._children = null;
   	}
   	this.update(d);
