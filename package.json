@@ -37,6 +37,7 @@
     "@angular/cli": "^1.2.0",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
+    "@types/d3": "^4.9.0",
     "@types/jasmine": "2.5.45",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",
