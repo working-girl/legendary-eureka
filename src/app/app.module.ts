@@ -24,10 +24,10 @@ import { FlagsComponent } from './flags/flags.component';
 import { FlagChartComponent } from './flag-chart/flag-chart.component';
 import { WordsService } from './flags/words.service';
 
-//import { D3Service } from 'd3-ng2-service';
+// import { D3Service } from 'd3-ng2-service';
 //import { TestD3Component } from './test-d3/test-d3.component';
 //import { BrushZoomComponent } from './brush-zoom/brush-zoom.component';
-//import { NetworkChart2Component } from './network-chart-2/network-chart-2.component';
+// import { NetworkChart2Component } from './network-chart-2/network-chart-2.component';
 
 @NgModule({
   declarations: [
@@ -45,9 +45,8 @@ import { WordsService } from './flags/words.service';
     FlagsComponent,
     FlagChartComponent,
     CountryComponent
- /*   TestD3Component,
-    BrushZoomComponent,
-    NetworkChart2Component*/
+ /* TestD3Component,
+    BrushZoomComponent, */
   ],
   imports: [
     BrowserModule,
