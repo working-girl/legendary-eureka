@@ -1,0 +1,20 @@
+{
+  "name": "my-dream-come-true",
+  "version": "1.0.0",
+  "description": "just for fun",
+  "main": "index.js",
+  "scripts": {
+    "fullstack:build": "cd ./my-dream-app && npm run build:fullstack",
+    "start" :"npm run fullstack:build && cd ./my-dream-server && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/working-girl/legendary-eureka.git"
+  },
+  "author": "the angular experts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/working-girl/legendary-eureka/issues"
+  },
+  "homepage": "https://github.com/working-girl/legendary-eureka#readme"
+}
