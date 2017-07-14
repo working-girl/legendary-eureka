@@ -82,7 +82,7 @@ export class TreeComponent implements AfterViewInit {
   	nodeEnter.append('circle')
   			     .attr('class', 'node')
 			       .attr('r', 1e-6)
-			       .style("fill", (d) => { console.log('now'); return d._children ? "lightsteelblue" : "#fff"; });
+			       .style("fill", (d) => { return d._children ? "lightsteelblue" : "#fff"; });
 	
   	nodeEnter.append("text")
 		  	     .attr("dy", ".35em")
