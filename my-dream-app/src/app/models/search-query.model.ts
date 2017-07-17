@@ -1,7 +1,7 @@
 export class SearchQuery {
-	searchId: string
+	searchId: number
 
-	setSearchId(id: string){
+	setSearchId(id: number){
 		this.searchId = id
 		console.log("info set: " + id)
 	}

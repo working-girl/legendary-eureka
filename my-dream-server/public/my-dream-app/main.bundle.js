@@ -755,6 +755,7 @@ var IdcardComponent = (function () {
         this.searchinfo = searchinfo;
     }
     IdcardComponent.prototype.ngOnInit = function () {
+        console.log('Active user : ' + this.searchinfo.getSearchId());
     };
     IdcardComponent.prototype.getActivity = function () {
         console.log("it worked!");
@@ -1016,15 +1017,14 @@ var NetworkChartComponent = (function () {
             .selectAll("line")
             .data(this.graph.edges)
             .enter().append("line")
-            .attr("stroke", "#999")
-            .attr("stroke-width", function (d) { return Math.sqrt(d.value); });
+            .attr("stroke", "#999");
+        //.attr("stroke-width", function(d) { return Math.sqrt(d.value);});
         var node = g.append("g")
             .attr("class", "nodes")
             .selectAll("circle")
             .data(this.graph.nodes)
             .enter().append("circle")
             .attr("r", 5)
-            .attr("fill", function (d) { return color(d.group); })
             .call(__WEBPACK_IMPORTED_MODULE_1_d3__["drag"]()
             .on("start", dragstarted)
             .on("drag", dragged)
@@ -1046,8 +1046,8 @@ var NetworkChartComponent = (function () {
             link
                 .attr("x1", function (d) { return d.source.x; })
                 .attr("y1", function (d) { return d.source.y; })
-                .attr("x2", function (d) { return d.target.x; })
-                .attr("y2", function (d) { return d.target.y; });
+                .attr("x2", function (d) { return d.destination.x; })
+                .attr("y2", function (d) { return d.destination.y; });
             node
                 .attr("cx", function (d) { return d.x; })
                 .attr("cy", function (d) { return d.y; });
@@ -1126,6 +1126,7 @@ module.exports = "{{networkData | json}}\n<!--<app-network-chart *ngIf=\"network
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__network_service__ = __webpack_require__("../../../../../src/app/network/network.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_search_query_model__ = __webpack_require__("../../../../../src/app/models/search-query.model.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NetworkComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1138,19 +1139,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var NetworkComponent = (function () {
-    function NetworkComponent(dataService) {
+    function NetworkComponent(dataService, userinfo) {
         this.dataService = dataService;
-        this.uid = "test";
+        this.userinfo = userinfo;
     }
     NetworkComponent.prototype.ngOnInit = function () {
-        this.getNetworkData(this.uid);
+        this.getNetworkData(this.userinfo.getSearchId());
     };
     NetworkComponent.prototype.getNetworkData = function (id) {
-        var _this = this;
         this.dataService.getRelations(id).subscribe(function (data) {
-            _this.networkData = data;
-        }, function (err) { return console.error(err); });
+            //this.networkData = data
+            console.log(data);
+        }, function (error) {
+            console.error(error);
+        });
     };
     return NetworkComponent;
 }());
@@ -1160,10 +1164,10 @@ NetworkComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/network/network.component.html"),
         styles: [__webpack_require__("../../../../../src/app/network/network.component.css")],
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__network_service__["a" /* NetworkService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__network_service__["a" /* NetworkService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__network_service__["a" /* NetworkService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__network_service__["a" /* NetworkService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__models_search_query_model__["a" /* SearchQuery */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__models_search_query_model__["a" /* SearchQuery */]) === "function" && _b || Object])
 ], NetworkComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=network.component.js.map
 
 /***/ }),
@@ -1174,10 +1178,12 @@ var _a;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NetworkService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1188,6 +1194,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1204,8 +1211,10 @@ var NetworkService = (function () {
       }*/
     /*get relations from mongodbd for specific user*/
     NetworkService.prototype.getRelations = function (id) {
-        return this.http.get('api/connections')
-            .map(function (res) { return res.json(); });
+        console.log('requesting contacts on user: ' + id);
+        return this.http.get("http://localhost:3001/my-dream-app/home/network/" + id)
+            .map(function (res) { return res.json(); })
+            .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json()); });
     };
     return NetworkService;
 }());

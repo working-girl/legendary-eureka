@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var relationRoutes = require('./routes/relation');
 
 var app = express();
 
@@ -29,15 +29,18 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('*', routes);
-app.use('/users', users);
+app.use('/my-dream-app/home/network', relationRoutes);
+app.use('/', routes);
+
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    /*var err = new Error('Not Found');
     err.status = 404;
-    next(err);
+    next(err);*/
+    return res.render('index');
 });
+
 
 /// error handlers
 
@@ -71,16 +74,16 @@ db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function() {
 
-  var API_relations      = require('./apis/relations.api');
+  //var API_relations      = require('./apis/relations.api');
 
-  app.get('/api/connections',            API_relations.getRelations);
-  app.get('/api/connections/:userid'  ,  API_relations.getRelationsUser);
+  //app.get('/api/connections',            API_relations.getRelations);
+  //app.get('/api/connections/:userid'  ,  API_relations.getRelationsUser);
 
 
   // all other routes are handled by Angular
-  app.get('/*', function(req, res) {
-    res.sendFile(path.join(__dirname,'/../../dist/index.html'));
-  })
+  //app.get('/*', function(req, res) {
+  //  res.sendFile(path.join(__dirname,'/../../dist/index.html'));
+  //})
 
 
 //app.listen( PORT , () => console.log(`listening on http://localhost:${PORT} + ${connectionString}` ) )
