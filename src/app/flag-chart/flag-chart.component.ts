@@ -49,9 +49,8 @@ export class FlagChartComponent implements OnChanges {
 
 	let con = this.svg.append("g")
 
-    let zoom_handler = d3.zoom()
-        .on("zoom", zoom_actions);
-    zoom_handler(this.svg); 
+  let zoom_handler = d3.zoom().on("zoom", zoom_actions);
+  zoom_handler(this.svg); 
 
 	let color = d3.scaleOrdinal(d3.schemeCategory20);
 

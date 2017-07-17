@@ -24,6 +24,7 @@ import { FlagsComponent } from './flags/flags.component';
 import { FlagChartComponent } from './flag-chart/flag-chart.component';
 import { WordsService } from './flags/words.service';
 import { TreeComponent } from './tree/tree.component';
+import { SearchcloudComponent } from './searchcloud/searchcloud.component';
 
 // import { D3Service } from 'd3-ng2-service';
 //import { TestD3Component } from './test-d3/test-d3.component';
@@ -48,7 +49,8 @@ import { TreeComponent } from './tree/tree.component';
     CountryComponent,
  /* TestD3Component,
     BrushZoomComponent, */
-    TreeComponent
+    TreeComponent,
+    SearchcloudComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,16 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { treeData } from './treeData';
-import * as d3 from 'd3'
+import * as d3 from 'd3';
 
 @Component({
   selector: 'app-tree',
+  encapsulation: ViewEncapsulation.None,
   templateUrl: './tree.component.html',
   styleUrls: ['./tree.component.css']
 })
 export class TreeComponent implements AfterViewInit {
   private treemap:any;
   private root:any;
-  // private diagonal:any;
   private svg:any;
   private i:number;
   private r:number;
@@ -24,9 +24,6 @@ export class TreeComponent implements AfterViewInit {
     let margin = {top: 20, right: 120, bottom: 20, left: 120};
 	  let width = 960 - margin.right - margin.left;
 	  let height = 800 - margin.top - margin.bottom;
-  
-	  /*this.diagonal = d3.diagonal()
-	  				.projection(function(d) { return [d.y, d.x]; });*/
   
 	  this.svg = d3.select("app-tree").append("svg")
       	       .attr("width", width + margin.right + margin.left)
@@ -117,7 +114,7 @@ export class TreeComponent implements AfterViewInit {
   	nodeExit.select('text')
 		        .style('fill-opacity', 1e-6);
 	
-  	// Update the links…
+  	// Update the links
   	let link = this.svg.selectAll('path.link')
 			   .data(links, (d) => { return d.id; });
 	
