@@ -21,10 +21,6 @@ const routes: Routes = [
     component: CountryComponent
   },
   {
-    path: 'tree',
-    component: TreeComponent,
-  },
-  {
     path: 'searchcloud',
     component: SearchcloudComponent,
   },
@@ -45,6 +41,10 @@ const routes: Routes = [
         {
           path: 'flags',
           component: FlagsComponent,
+        },
+        {
+          path: 'tree',
+          component: TreeComponent,
         }
   	  ] 
   }

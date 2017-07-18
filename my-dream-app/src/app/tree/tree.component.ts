@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
 import { treeData } from './treeData';
 import * as d3 from 'd3';
 
@@ -9,9 +9,18 @@ import * as d3 from 'd3';
   styleUrls: ['./tree.component.css']
 })
 export class TreeComponent implements AfterViewInit {
+
+  @ViewChild('iptree') element: ElementRef
+
+  private margin: any 
+  private host: d3.Selection
+  private svg: d3.Selection
+  private htmlElement: HTMLElement   
+  private width:number;
+  private height:number;
+
   private treemap:any;
   private root:any;
-  private svg:any;
   private i:number;
   private r:number;
   private duration:number;
@@ -21,25 +30,46 @@ export class TreeComponent implements AfterViewInit {
   // ngOnInit() { }
 
   ngAfterViewInit() {
-    let margin = {top: 20, right: 120, bottom: 20, left: 120};
-	  let width = 960 - margin.right - margin.left;
-	  let height = 800 - margin.top - margin.bottom;
-  
-	  this.svg = d3.select("app-tree").append("svg")
-      	       .attr("width", width + margin.right + margin.left)
-      	       .attr("height", height + margin.top + margin.bottom)//;
-               .append("g")
-    //let g = this.svg.append("g")
-      	         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    this.htmlElement = this.element.nativeElement
+    this.host = d3.select(this.htmlElement)  
+    this.margin = { top: 5, bottom: 0, left: 10, right: 0 }
+    this.width = this.htmlElement.clientWidth - this.margin.left - this.margin.right
+    this.height = this.width * 0.5 - this.margin.top - this.margin.bottom      
+
+    //let margin = {top: 20, right: 120, bottom: 20, left: 120};
+	  //let width = 960 - margin.right - margin.left;
+	  //let height = 800 - margin.top - margin.bottom;
+ 
+    this.host.html('')
+    this.svg = this.host.append("svg")
+      .attr("viewBox", `-100 0 ${this.width} ${this.height}`)      
+     
+    let con = this.svg.append("g")
+
+    let zoom_handler = d3.zoom().on("zoom", zoom_actions);
+    zoom_handler(con);
+
+    /*har flyttet funktionen ind igen, da jeg fik fejl*/
+    function zoom_actions(){
+      con.attr("transform", d3.event.transform)
+    } 
+
+	  con
+      .attr("width", this.width + this.margin.right + this.margin.left)
+      .attr("height", this.height + this.margin.top + this.margin.bottom)//;
+      .append("g")
+      //let g = this.svg.append("g")
+      .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
   
     this.i = 0;
     this.duration = 300;
     this.r = 5;
     this.root = null;
   
-    this.treemap = d3.tree().size([height, width]);
+
+    this.treemap = d3.tree().size([this.height, this.width]);
     this.root = d3.hierarchy(treeData, (d) => { return d.children; });
-	  this.root.x0 = height / 2;
+	  this.root.x0 = this.height / 2;
 	  this.root.y0 = 0;
 	  this.root.children.forEach((d) => {return this.collapse(d)});
 	  

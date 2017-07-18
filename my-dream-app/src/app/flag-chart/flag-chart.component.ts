@@ -47,55 +47,55 @@ export class FlagChartComponent implements OnChanges {
 
   private drawFlagCloud() {
 
-	let con = this.svg.append("g")
+  	let con = this.svg.append("g")
 
-  let zoom_handler = d3.zoom().on("zoom", zoom_actions);
-  zoom_handler(this.svg); 
+    let zoom_handler = d3.zoom().on("zoom", zoom_actions);
+    zoom_handler(this.svg); 
 
-	let color = d3.scaleOrdinal(d3.schemeCategory20);
+  	let color = d3.scaleOrdinal(d3.schemeCategory20);
 
-	let layout: any
-	layout = d3v4cloud.cloud()
-		.size([this.width, this.height])
-    	.words(this.words)
-	    .padding(5)
-	    .rotate(function() { return ~~(Math.random() * 2) * 90; })
-	    .font("Impact")
-	    .fontSize(function(d) { return d.size; })
+  	let layout: any
+  	layout = d3v4cloud.cloud()
+  		.size([this.width, this.height])
+      	.words(this.words)
+  	    .padding(5)
+  	    .rotate(function() { return ~~(Math.random() * 2) * 90; })
+  	    .font("Impact")
+  	    .fontSize(function(d) { return d.size; })
 
-	layout.on("end", draw(this.words, con, layout));
-	layout.start()
+  	layout.on("end", draw(this.words, con, layout));
+  	layout.start()
 
-	//console.log(layout)
+  	//console.log(layout)
     function zoom_actions(){
-        con.attr("transform", d3.event.transform)
+          con.attr("transform", d3.event.transform)
     }
 
-	function draw(words,container,layout) {
-	  	let con = container
-		      .attr("width", layout.size()[0])
-		      .attr("height", layout.size()[1])
-	      .append("g")
-	      	  .attr("transform", "translate(" + layout.size()[0] / 3 + "," + layout.size()[1] / 3 + ")")
-	      .selectAll("text")
-	      	  .data(words)
-		  .enter().append("text")
-		      .style("font-size", function(d) { return d.size + "px"; })
-		      .style("font-family", "Impact")
-		      .style("fill", function(d, i) { return color(i); })
-		      .attr("text-anchor", "middle")
-		      .attr("transform", function(d, i) {
-		      		    var xvar = (256 * (Math.random() + .5)) >> 1;
-        				var yvar = (256 * (Math.random() + .5)) >> 1;
-        				var rotate = cloudRotate.call(this, d, i)
+  	function draw(words,container,layout) {
+  	  	let con = container
+  		      .attr("width", layout.size()[0])
+  		      .attr("height", layout.size()[1])
+  	      .append("g")
+  	      	  .attr("transform", "translate(" + layout.size()[0] / 3 + "," + layout.size()[1] / 3 + ")")
+  	      .selectAll("text")
+  	      	  .data(words)
+  		    .enter().append("text")
+  		      .style("font-size", function(d) { return d.size + "px"; })
+  		      .style("font-family", "Impact")
+  		      .style("fill", function(d, i) { return color(i); })
+  		      .attr("text-anchor", "middle")
+  		      .attr("transform", function(d, i) {
+  		      		    var xvar = (256 * (Math.random() + .5)) >> 1;
+          				var yvar = (256 * (Math.random() + .5)) >> 1;
+          				var rotate = cloudRotate.call(this, d, i)
 
-	        			return "translate(" + [xvar, yvar] + ")rotate(" + rotate + ")"
-	      	  })
-	         .text(function(d) { return d.text; });
+  	        			return "translate(" + [xvar, yvar] + ")rotate(" + rotate + ")"
+  	      	  })
+  	         .text(function(d) { return d.text; });
 
-		function cloudRotate() {
-  			return (~~(Math.random() * 6) - 3) * 30;
-		}
-	}
+  		function cloudRotate() {
+    			return (~~(Math.random() * 6) - 3) * 30;
+  		}
+  	}
   }
 }

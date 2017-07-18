@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnChanges, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
 import { skillsData } from './skillsData';
 import * as d3 from 'd3';
 import * as d3v4cloud from 'd3-v4-cloud';
@@ -9,7 +9,14 @@ import * as _ from 'lodash';
   templateUrl: './searchcloud.component.html',
   styleUrls: ['./searchcloud.component.css']
 })
-export class SearchcloudComponent implements OnInit {
+export class SearchcloudComponent implements OnInit, OnChanges {
+
+  @ViewChild('flagcloud') element: ElementRef
+
+  private margin: any 
+  private host: d3.Selection
+  private svg: d3.Selection
+
   private minyears:any;
   private maxyears:any;
   private minfont:number;
@@ -18,21 +25,29 @@ export class SearchcloudComponent implements OnInit {
   private height:number;
   private fill:any;
   private MAX_TRIES:any;
+  private htmlElement: HTMLElement  
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.htmlElement = this.element.nativeElement
+    this.host = d3.select(this.htmlElement)  
+    this.margin = { top: 5, bottom: 0, left: 0, right: 0 }
+    this.width = this.htmlElement.clientWidth - this.margin.left - this.margin.right
+    this.height = this.width * 0.5 - this.margin.top - this.margin.bottom      
+
   	this.minyears = _.min(_.map(skillsData, 'years'));
     this.maxyears = _.max(_.map(skillsData, 'years'));
     this.minfont = 18;
     this.maxfont = 35;
-    this.width = 800;
-    this.height = 400;
+
     this.fill = d3.scaleOrdinal(d3.schemeCategory20);
     this.MAX_TRIES = (this.width > 400) ? 6 : 3;
 
     this.generateSkillCloud(0);
   }
+
+  ngOnChanges(): void{}
 
   generateSkillCloud(retryCycle?:any) {
   	// let textfilter = document.getElementById('filter');
@@ -41,7 +56,7 @@ export class SearchcloudComponent implements OnInit {
 
   	// let skillsToDraw = this.transformToCloudLayoutObjects(filterSkillsvar, retryCycle);
 
-	let skillsToDraw = _.map(filterSkillsvar, (skill, retryCycle) => {
+	  let skillsToDraw = _.map(filterSkillsvar, (skill, retryCycle) => {
         let retval = {
     	    text: skill.name.toLowerCase() + ':' + skill.years + 'y',
             size: this.toFontSize(skill.years, skill.relevancy, retryCycle)
@@ -50,7 +65,8 @@ export class SearchcloudComponent implements OnInit {
     });
 
     let layout: any;
-	layout = d3v4cloud.cloud()
+	      
+      layout = d3v4cloud.cloud()
         .size([this.width, this.height])
         .words(skillsToDraw)
         .rotate(() => { return (~~(Math.random() * 6) - 2.5) * 30; })
@@ -93,8 +109,23 @@ export class SearchcloudComponent implements OnInit {
     }
         
     drawSkillCloud(words:any) {
-    	d3.select("#cloud svg").remove();
-    	d3.select("#cloud").append("svg")
+
+    	//d3.select("#cloud svg").remove();
+      this.host.html('')
+      this.svg = this.host.append("svg")
+      .attr("viewBox", `0 0 ${this.width} ${this.height}`)      
+   	
+      let con = this.svg.append("g")
+
+      let zoom_handler = d3.zoom().on("zoom", zoom_actions);
+      zoom_handler(this.svg);
+
+      /*har flyttet funktionen ind igen, da jeg fik fejl*/
+      function zoom_actions(){
+            con.attr("transform", d3.event.transform)
+      }
+
+      con
     	    .attr("width", this.width)
     	    .attr("height", this.height)
     	    .append("g")

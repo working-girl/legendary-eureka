@@ -52,10 +52,6 @@ var routes = [
         component: __WEBPACK_IMPORTED_MODULE_7__country_country_component__["a" /* CountryComponent */]
     },
     {
-        path: 'tree',
-        component: __WEBPACK_IMPORTED_MODULE_5__tree_tree_component__["a" /* TreeComponent */],
-    },
-    {
         path: 'searchcloud',
         component: __WEBPACK_IMPORTED_MODULE_8__searchcloud_searchcloud_component__["a" /* SearchcloudComponent */],
     },
@@ -75,6 +71,10 @@ var routes = [
             {
                 path: 'flags',
                 component: __WEBPACK_IMPORTED_MODULE_6__flags_flags_component__["a" /* FlagsComponent */],
+            },
+            {
+                path: 'tree',
+                component: __WEBPACK_IMPORTED_MODULE_5__tree_tree_component__["a" /* TreeComponent */],
             }
         ]
     }
@@ -140,7 +140,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -319,7 +319,7 @@ var CountryComponent = (function () {
     return CountryComponent;
 }());
 CountryComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-country',
         template: __webpack_require__("../../../../../src/app/country/country.component.html"),
         styles: [__webpack_require__("../../../../../src/app/country/country.component.css")]
@@ -380,7 +380,7 @@ var DescCardComponent = (function () {
     return DescCardComponent;
 }());
 DescCardComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-desc-card',
         template: __webpack_require__("../../../../../src/app/desc-card/desc-card.component.html"),
         styles: [__webpack_require__("../../../../../src/app/desc-card/desc-card.component.css")]
@@ -508,7 +508,7 @@ var FlagChartComponent = (function () {
     return FlagChartComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('flagcloud'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('flagcloud'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], FlagChartComponent.prototype, "element", void 0);
 __decorate([
@@ -520,7 +520,7 @@ __decorate([
     __metadata("design:type", Object)
 ], FlagChartComponent.prototype, "words", void 0);
 FlagChartComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-flag-chart',
         template: __webpack_require__("../../../../../src/app/flag-chart/flag-chart.component.html"),
         styles: [__webpack_require__("../../../../../src/app/flag-chart/flag-chart.component.css")]
@@ -554,7 +554,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/flags/flags.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"loadData('1')\">Dataset 1</button>\n<button type=\"button\" class=\"btn btn-outline-warning\" (click)=\"loadData('2')\">Dataset 2</button>\n<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"loadData('3')\">Dataset 3</button>\n<button type=\"button\" class=\"btn btn-outline-danger\" (click)=\"loadData('3')\">Dataset 4</button>\n<app-flag-chart *ngIf=\"words\" [words]=\"words\"></app-flag-chart>"
+module.exports = "<!--<button type=\"button\" class=\"btn btn-outline-primary\" (click)=\"loadData('1')\">Dataset 1</button>\n<button type=\"button\" class=\"btn btn-outline-warning\" (click)=\"loadData('2')\">Dataset 2</button>\n<button type=\"button\" class=\"btn btn-outline-success\" (click)=\"loadData('3')\">Dataset 3</button>\n<button type=\"button\" class=\"btn btn-outline-danger\" (click)=\"loadData('3')\">Dataset 4</button>-->\n<!--<app-flag-chart *ngIf=\"words\" [words]=\"words\"></app-flag-chart>-->\n\n<app-searchcloud></app-searchcloud>"
 
 /***/ }),
 
@@ -611,7 +611,7 @@ var FlagsComponent = (function () {
     return FlagsComponent;
 }());
 FlagsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-flags',
         template: __webpack_require__("../../../../../src/app/flags/flags.component.html"),
         styles: [__webpack_require__("../../../../../src/app/flags/flags.component.css")]
@@ -703,7 +703,7 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-home',
         template: __webpack_require__("../../../../../src/app/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
@@ -771,7 +771,7 @@ var IdcardComponent = (function () {
     return IdcardComponent;
 }());
 IdcardComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-idcard',
         template: __webpack_require__("../../../../../src/app/idcard/idcard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/idcard/idcard.component.css")]
@@ -865,7 +865,7 @@ var NavStatsComponent = (function () {
     return NavStatsComponent;
 }());
 NavStatsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-nav-stats',
         template: __webpack_require__("../../../../../src/app/nav-stats/nav-stats.component.html"),
         styles: [__webpack_require__("../../../../../src/app/nav-stats/nav-stats.component.css")]
@@ -926,7 +926,7 @@ var NavbarComponent = (function () {
     return NavbarComponent;
 }());
 NavbarComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-navbar',
         template: __webpack_require__("../../../../../src/app/navbar/navbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/navbar/navbar.component.css")]
@@ -1077,7 +1077,7 @@ var NetworkChartComponent = (function () {
     return NetworkChartComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('network'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('network'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], NetworkChartComponent.prototype, "element", void 0);
 __decorate([
@@ -1085,7 +1085,7 @@ __decorate([
     __metadata("design:type", Object)
 ], NetworkChartComponent.prototype, "netgraph", void 0);
 NetworkChartComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-network-chart',
         template: __webpack_require__("../../../../../src/app/network-chart/network-chart.component.html"),
         styles: [__webpack_require__("../../../../../src/app/network-chart/network-chart.component.css")],
@@ -1162,7 +1162,7 @@ var NetworkComponent = (function () {
     return NetworkComponent;
 }());
 NetworkComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-network',
         template: __webpack_require__("../../../../../src/app/network/network.component.html"),
         styles: [__webpack_require__("../../../../../src/app/network/network.component.css")],
@@ -1283,7 +1283,7 @@ var SearchbarComponent = (function () {
     return SearchbarComponent;
 }());
 SearchbarComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-searchbar',
         template: __webpack_require__("../../../../../src/app/searchbar/searchbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/searchbar/searchbar.component.css")]
@@ -1317,7 +1317,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/searchcloud/searchcloud.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  searchcloud works!\n</p>\n<input id=\"filter\" type=\"text\" (keyup)=\"generateSkillCloud(0)\" placeholder=\"Type a skill...\" />\n<div id=\"cloud\"></div>"
+module.exports = "<input id=\"filter\" type=\"text\" (keyup)=\"generateSkillCloud(0)\" placeholder=\"Type a skill...\" />\n<div id=\"cloud\" #flagcloud></div>"
 
 /***/ }),
 
@@ -1352,16 +1352,20 @@ var SearchcloudComponent = (function () {
     function SearchcloudComponent() {
     }
     SearchcloudComponent.prototype.ngOnInit = function () {
+        this.htmlElement = this.element.nativeElement;
+        this.host = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this.htmlElement);
+        this.margin = { top: 5, bottom: 0, left: 0, right: 0 };
+        this.width = this.htmlElement.clientWidth - this.margin.left - this.margin.right;
+        this.height = this.width * 0.5 - this.margin.top - this.margin.bottom;
         this.minyears = __WEBPACK_IMPORTED_MODULE_4_lodash__["min"](__WEBPACK_IMPORTED_MODULE_4_lodash__["map"](__WEBPACK_IMPORTED_MODULE_1__skillsData__["a" /* skillsData */], 'years'));
         this.maxyears = __WEBPACK_IMPORTED_MODULE_4_lodash__["max"](__WEBPACK_IMPORTED_MODULE_4_lodash__["map"](__WEBPACK_IMPORTED_MODULE_1__skillsData__["a" /* skillsData */], 'years'));
         this.minfont = 18;
         this.maxfont = 35;
-        this.width = 800;
-        this.height = 400;
         this.fill = __WEBPACK_IMPORTED_MODULE_2_d3__["scaleOrdinal"](__WEBPACK_IMPORTED_MODULE_2_d3__["schemeCategory20"]);
         this.MAX_TRIES = (this.width > 400) ? 6 : 3;
         this.generateSkillCloud(0);
     };
+    SearchcloudComponent.prototype.ngOnChanges = function () { };
     SearchcloudComponent.prototype.generateSkillCloud = function (retryCycle) {
         var _this = this;
         // let textfilter = document.getElementById('filter');
@@ -1418,8 +1422,18 @@ var SearchcloudComponent = (function () {
     };
     SearchcloudComponent.prototype.drawSkillCloud = function (words) {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_2_d3__["select"]("#cloud svg").remove();
-        __WEBPACK_IMPORTED_MODULE_2_d3__["select"]("#cloud").append("svg")
+        //d3.select("#cloud svg").remove();
+        this.host.html('');
+        this.svg = this.host.append("svg")
+            .attr("viewBox", "0 0 " + this.width + " " + this.height);
+        var con = this.svg.append("g");
+        var zoom_handler = __WEBPACK_IMPORTED_MODULE_2_d3__["zoom"]().on("zoom", zoom_actions);
+        zoom_handler(this.svg);
+        /*har flyttet funktionen ind igen, da jeg fik fejl*/
+        function zoom_actions() {
+            con.attr("transform", __WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform);
+        }
+        con
             .attr("width", this.width)
             .attr("height", this.height)
             .append("g")
@@ -1448,8 +1462,12 @@ var SearchcloudComponent = (function () {
     };
     return SearchcloudComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('flagcloud'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
+], SearchcloudComponent.prototype, "element", void 0);
 SearchcloudComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-searchcloud',
         template: __webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.html"),
         styles: [__webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.css")]
@@ -1457,6 +1475,7 @@ SearchcloudComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], SearchcloudComponent);
 
+var _a;
 //# sourceMappingURL=searchcloud.component.js.map
 
 /***/ }),
@@ -1624,7 +1643,7 @@ var StatsComponent = (function () {
     return StatsComponent;
 }());
 StatsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-stats',
         template: __webpack_require__("../../../../../src/app/stats/stats.component.html"),
         styles: [__webpack_require__("../../../../../src/app/stats/stats.component.css")]
@@ -1657,7 +1676,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/tabview/tabview.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav nav-tabs nav-fill\">\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/network\">Network</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/flags\">Language</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link disabled\" routerLinkActive=\"active\" href=\"#\">Hierarchy</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link disabled\"  routerLinkActive=\"active\" href=\"#\">Activity</a>\n  </li>\n</ul>\n<p style=\"padding:5px;\"></p>\n<router-outlet></router-outlet>"
+module.exports = "<ul class=\"nav nav-tabs nav-fill\">\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/network\">Network</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/flags\">Language</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/tree\">Hierarchy</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link disabled\"  routerLinkActive=\"active\" href=\"#\">Activity</a>\n  </li>\n</ul>\n<p style=\"padding:5px;\"></p>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -1685,7 +1704,7 @@ var TabviewComponent = (function () {
     return TabviewComponent;
 }());
 TabviewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-tabview',
         template: __webpack_require__("../../../../../src/app/tabview/tabview.component.html"),
         styles: [__webpack_require__("../../../../../src/app/tabview/tabview.component.css")]
@@ -1718,7 +1737,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/tree/tree.component.html":
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "<div id=\"tree\" #iptree></div>"
 
 /***/ }),
 
@@ -1749,21 +1768,36 @@ var TreeComponent = (function () {
     // ngOnInit() { }
     TreeComponent.prototype.ngAfterViewInit = function () {
         var _this = this;
-        var margin = { top: 20, right: 120, bottom: 20, left: 120 };
-        var width = 960 - margin.right - margin.left;
-        var height = 800 - margin.top - margin.bottom;
-        this.svg = __WEBPACK_IMPORTED_MODULE_2_d3__["select"]("app-tree").append("svg")
-            .attr("width", width + margin.right + margin.left)
-            .attr("height", height + margin.top + margin.bottom) //;
+        this.htmlElement = this.element.nativeElement;
+        this.host = __WEBPACK_IMPORTED_MODULE_2_d3__["select"](this.htmlElement);
+        this.margin = { top: 5, bottom: 0, left: 10, right: 0 };
+        this.width = this.htmlElement.clientWidth - this.margin.left - this.margin.right;
+        this.height = this.width * 0.5 - this.margin.top - this.margin.bottom;
+        //let margin = {top: 20, right: 120, bottom: 20, left: 120};
+        //let width = 960 - margin.right - margin.left;
+        //let height = 800 - margin.top - margin.bottom;
+        this.host.html('');
+        this.svg = this.host.append("svg")
+            .attr("viewBox", "-100 0 " + this.width + " " + this.height);
+        var con = this.svg.append("g");
+        var zoom_handler = __WEBPACK_IMPORTED_MODULE_2_d3__["zoom"]().on("zoom", zoom_actions);
+        zoom_handler(con);
+        /*har flyttet funktionen ind igen, da jeg fik fejl*/
+        function zoom_actions() {
+            con.attr("transform", __WEBPACK_IMPORTED_MODULE_2_d3__["event"].transform);
+        }
+        con
+            .attr("width", this.width + this.margin.right + this.margin.left)
+            .attr("height", this.height + this.margin.top + this.margin.bottom) //;
             .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            .attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
         this.i = 0;
         this.duration = 300;
         this.r = 5;
         this.root = null;
-        this.treemap = __WEBPACK_IMPORTED_MODULE_2_d3__["tree"]().size([height, width]);
+        this.treemap = __WEBPACK_IMPORTED_MODULE_2_d3__["tree"]().size([this.height, this.width]);
         this.root = __WEBPACK_IMPORTED_MODULE_2_d3__["hierarchy"](__WEBPACK_IMPORTED_MODULE_1__treeData__["a" /* treeData */], function (d) { return d.children; });
-        this.root.x0 = height / 2;
+        this.root.x0 = this.height / 2;
         this.root.y0 = 0;
         this.root.children.forEach(function (d) { return _this.collapse(d); });
         this.update(this.root);
@@ -1868,8 +1902,12 @@ var TreeComponent = (function () {
     };
     return TreeComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('iptree'),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
+], TreeComponent.prototype, "element", void 0);
 TreeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-tree',
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None,
         template: __webpack_require__("../../../../../src/app/tree/tree.component.html"),
@@ -1878,6 +1916,7 @@ TreeComponent = __decorate([
     __metadata("design:paramtypes", [])
 ], TreeComponent);
 
+var _a;
 //# sourceMappingURL=tree.component.js.map
 
 /***/ }),
