@@ -19,11 +19,13 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__country_country_component__ = __webpack_require__("../../../../../src/app/country/country.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__searchbar_searchbar_component__ = __webpack_require__("../../../../../src/app/searchbar/searchbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__network_network_component__ = __webpack_require__("../../../../../src/app/network/network.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__searchbar_searchbar_component__ = __webpack_require__("../../../../../src/app/searchbar/searchbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__network_network_component__ = __webpack_require__("../../../../../src/app/network/network.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__tree_tree_component__ = __webpack_require__("../../../../../src/app/tree/tree.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__flags_flags_component__ = __webpack_require__("../../../../../src/app/flags/flags.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__country_country_component__ = __webpack_require__("../../../../../src/app/country/country.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__searchcloud_searchcloud_component__ = __webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -38,18 +40,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
+
 var routes = [
     {
         path: '',
-        component: __WEBPACK_IMPORTED_MODULE_4__searchbar_searchbar_component__["a" /* SearchbarComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_3__searchbar_searchbar_component__["a" /* SearchbarComponent */]
     },
     {
         path: 'country',
-        component: __WEBPACK_IMPORTED_MODULE_2__country_country_component__["a" /* CountryComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_7__country_country_component__["a" /* CountryComponent */]
+    },
+    {
+        path: 'tree',
+        component: __WEBPACK_IMPORTED_MODULE_5__tree_tree_component__["a" /* TreeComponent */],
+    },
+    {
+        path: 'searchcloud',
+        component: __WEBPACK_IMPORTED_MODULE_8__searchcloud_searchcloud_component__["a" /* SearchcloudComponent */],
     },
     {
         path: 'home',
-        component: __WEBPACK_IMPORTED_MODULE_3__home_home_component__["a" /* HomeComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */],
         children: [
             {
                 path: '',
@@ -58,11 +70,11 @@ var routes = [
             },
             {
                 path: 'network',
-                component: __WEBPACK_IMPORTED_MODULE_5__network_network_component__["a" /* NetworkComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_4__network_network_component__["a" /* NetworkComponent */],
             },
             {
                 path: 'flags',
-                component: __WEBPACK_IMPORTED_MODULE_6__flags_flags_component__["a" /* FlagsComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_6__flags_flags_component__["a" /* FlagsComponent */],
             }
         ]
     }
@@ -165,6 +177,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__flags_flags_component__ = __webpack_require__("../../../../../src/app/flags/flags.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__flag_chart_flag_chart_component__ = __webpack_require__("../../../../../src/app/flag-chart/flag-chart.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__flags_words_service__ = __webpack_require__("../../../../../src/app/flags/words.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__tree_tree_component__ = __webpack_require__("../../../../../src/app/tree/tree.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__searchcloud_searchcloud_component__ = __webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -194,10 +208,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//import { D3Service } from 'd3-ng2-service';
+
+
+// import { D3Service } from 'd3-ng2-service';
 //import { TestD3Component } from './test-d3/test-d3.component';
 //import { BrushZoomComponent } from './brush-zoom/brush-zoom.component';
-//import { NetworkChart2Component } from './network-chart-2/network-chart-2.component';
+// import { NetworkChart2Component } from './network-chart-2/network-chart-2.component';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -219,10 +235,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_18__network_chart_network_chart_component__["a" /* NetworkChartComponent */],
             __WEBPACK_IMPORTED_MODULE_19__flags_flags_component__["a" /* FlagsComponent */],
             __WEBPACK_IMPORTED_MODULE_20__flag_chart_flag_chart_component__["a" /* FlagChartComponent */],
-            __WEBPACK_IMPORTED_MODULE_6__country_country_component__["a" /* CountryComponent */]
-            /*   TestD3Component,
-               BrushZoomComponent,
-               NetworkChart2Component*/
+            __WEBPACK_IMPORTED_MODULE_6__country_country_component__["a" /* CountryComponent */],
+            /* TestD3Component,
+               BrushZoomComponent, */
+            __WEBPACK_IMPORTED_MODULE_22__tree_tree_component__["a" /* TreeComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__searchcloud_searchcloud_component__["a" /* SearchcloudComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -396,7 +413,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/flag-chart/flag-chart.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"flag-chart\" #flagcloud></div>\n\n\n\n\n\n"
+module.exports = "<div class=\"flag-chart\" #flagcloud></div>"
 
 /***/ }),
 
@@ -421,6 +438,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+// import * as canvas from 'canvas';
 
 var FlagChartComponent = (function () {
     function FlagChartComponent() {
@@ -445,8 +463,7 @@ var FlagChartComponent = (function () {
     };
     FlagChartComponent.prototype.drawFlagCloud = function () {
         var con = this.svg.append("g");
-        var zoom_handler = __WEBPACK_IMPORTED_MODULE_1_d3__["zoom"]()
-            .on("zoom", zoom_actions);
+        var zoom_handler = __WEBPACK_IMPORTED_MODULE_1_d3__["zoom"]().on("zoom", zoom_actions);
         zoom_handler(this.svg);
         var color = __WEBPACK_IMPORTED_MODULE_1_d3__["scaleOrdinal"](__WEBPACK_IMPORTED_MODULE_1_d3__["schemeCategory20"]);
         var layout;
@@ -562,21 +579,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var FlagsComponent = (function () {
     function FlagsComponent(wordsService) {
         this.wordsService = wordsService;
-        this.data1 = ["breakgin", "break into", "break off", "breakgout", "break up", "breat",
-            "breath", "breathegin", "breathegout", "breathe", "breathing", "breed", "brick", "bridge", "brief",
-            "briefly", "bright", "brightly", "brilliant"];
-        this.data2 = ["bringgout", "bringgup",
-            "broad", "bring", "bringgback", "broadcat", "broadly", "broken", "brother", "brown", "bruh", "bubble", "breakfat",
-            "ability", "able", "about", "above", "abroad", "abence", "breakfast", "than"];
-        this.data3 = ["breakgup", "breat", "breath", "breathegin", "breathegout", "breathe", "breathing", "breed",
-            "brick", "bridge", "brief", "briefly", "bright", "brightly", "brilliant", "bringgback", "bringgdown", "bringgforward", "bringgout",
-            "bringgup", "bring", "broad", "broadcat", "broadly", "broken", "brother"];
-        this.data4 = ["bringgdown", "bringgforward", "thi", "dadsa", "dajda", "lorum",
-            "abandon", "abandoned", "Hello", "world", "normally", "you", "want", "more", "word", "breakgin", "breakginto",
-            "breakgoff", "breakgout", , "brown", "bruh", "bubble"];
+        this.data1 = ["breakgin", "break into", "break off", "breakgout", "break up", "breat", "breath", "breathegin", "breathegout", "breathe", "breathing", "breed", "brick", "bridge", "brief", "briefly", "bright", "brightly", "brilliant"];
+        this.data2 = ["bringgout", "bringgup", "broad", "bring", "bringgback", "broadcat", "broadly", "broken", "brother", "brown", "bruh", "bubble", "breakfat", "ability", "able", "about", "above", "abroad", "abence", "breakfast", "than"];
+        this.data3 = ["breakgup", "breat", "breath", "breathegin", "breathegout", "breathe", "breathing", "breed", "brick", "bridge", "brief", "briefly", "bright", "brightly", "brilliant", "bringgback", "bringgdown", "bringgforward", "bringgout", "bringgup", "bring", "broad", "broadcat", "broadly", "broken", "brother"];
+        this.data4 = ["bringgdown", "bringgforward", "thi", "dadsa", "dajda", "lorum", "abandon", "abandoned", "Hello", "world", "normally", "you", "want", "more", "word", "breakgin", "breakginto", "breakgoff", "breakgout", "brown", "bruh", "bubble"];
     }
-    FlagsComponent.prototype.ngOnInit = function () {
-    };
+    FlagsComponent.prototype.ngOnInit = function () { };
     FlagsComponent.prototype.loadData = function (num) {
         switch (num) {
             case "1":
@@ -979,97 +987,92 @@ var NetworkChartComponent = (function () {
     function NetworkChartComponent() {
     }
     NetworkChartComponent.prototype.ngAfterViewInit = function () {
-        this.htmlElement = this.element.nativeElement;
-        this.host = __WEBPACK_IMPORTED_MODULE_1_d3__["select"](this.htmlElement);
         this.setup();
-        this.buildSVG();
         this.drawGraph();
-        //console.log(this.htmlElement)
     };
-    /*Chart will be rebuild every time the @Input is updated*/
-    NetworkChartComponent.prototype.ngOnChanges = function () {
-        /*  this.setup()
-          this.buildSVG()
-          this.drawGraph()*/
-    };
+    /*Chart will be rebuild every time the @Input is updated
+    ngOnChanges(): void{
+      /*if (!this.graph.length === 0 || !this.host) return;
+      this.setup()
+      this.buildSVG()
+      this.drawGraph()
+    }*/
     NetworkChartComponent.prototype.setup = function () {
-        this.margin = { top: 5, bottom: 0, left: 0, right: 0 };
-        this.width = this.htmlElement.clientWidth - this.margin.left - this.margin.right;
-        this.height = this.width * 0.5 - this.margin.top - this.margin.bottom;
-    };
-    NetworkChartComponent.prototype.buildSVG = function () {
-        this.host.html('');
-        this.svg = this.host.append("svg")
-            .attr("viewBox", "0 0 " + this.width + " " + this.height);
+        var htmlElement = this.element.nativeElement;
+        var host = __WEBPACK_IMPORTED_MODULE_1_d3__["select"](htmlElement);
+        var margin = { top: 5, bottom: 0, left: 0, right: 0 };
+        var width = htmlElement.clientWidth - margin.left - margin.right;
+        var height = width * 0.5 - margin.top - margin.bottom;
+        host.html('');
+        this.svg = host.append("svg")
+            .attr("viewBox", "0 0 " + width + " " + height);
         //.append("g")
         //.attr('transform', 'translate(' + this.margin.left + ',' + this.margin.top + ')');
-    };
-    NetworkChartComponent.prototype.drawGraph = function () {
-        var color = __WEBPACK_IMPORTED_MODULE_1_d3__["scaleOrdinal"](__WEBPACK_IMPORTED_MODULE_1_d3__["schemeCategory20"]);
-        var simulation = __WEBPACK_IMPORTED_MODULE_1_d3__["forceSimulation"]()
+        this.color = __WEBPACK_IMPORTED_MODULE_1_d3__["scaleOrdinal"](__WEBPACK_IMPORTED_MODULE_1_d3__["schemeCategory20"]);
+        this.simulation = __WEBPACK_IMPORTED_MODULE_1_d3__["forceSimulation"]()
             .force("link", __WEBPACK_IMPORTED_MODULE_1_d3__["forceLink"]().id(function (d) { return d.id; }))
             .force("charge", __WEBPACK_IMPORTED_MODULE_1_d3__["forceManyBody"]().strength(-400))
-            .force("center", __WEBPACK_IMPORTED_MODULE_1_d3__["forceCenter"](this.width / 2, this.height / 2));
-        //console.log(simulation)
+            .force("center", __WEBPACK_IMPORTED_MODULE_1_d3__["forceCenter"](width / 2, height / 2));
+    };
+    NetworkChartComponent.prototype.ticked = function () {
+        this.link
+            .attr("x1", function (d) { return d.source.x; })
+            .attr("y1", function (d) { return d.source.y; })
+            .attr("x2", function (d) { return d.target.x; })
+            .attr("y2", function (d) { return d.target.y; });
+        this.node
+            .attr("cx", function (d) { return d.x; })
+            .attr("cy", function (d) { return d.y; });
+    };
+    NetworkChartComponent.prototype.drawGraph = function () {
+        var _this = this;
         var g = this.svg.append("g");
-        var link = g.append("g")
+        this.link = g.append("g")
             .attr("class", "links")
             .selectAll("line")
-            .data(this.graph.edges)
+            .data(this.netgraph.edges)
             .enter().append("line")
             .attr("stroke", "#999");
         //.attr("stroke-width", function(d) { return Math.sqrt(d.value);});
-        var node = g.append("g")
+        this.node = g.append("g")
             .attr("class", "nodes")
             .selectAll("circle")
-            .data(this.graph.nodes)
+            .data(this.netgraph.nodes)
             .enter().append("circle")
             .attr("r", 5)
             .call(__WEBPACK_IMPORTED_MODULE_1_d3__["drag"]()
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
-        var zoom_handler = __WEBPACK_IMPORTED_MODULE_1_d3__["zoom"]()
-            .on("zoom", zoom_actions);
-        zoom_handler(this.svg);
-        node.append("title")
+            .on("start", function (d) { return _this.dragstarted(d); })
+            .on("drag", function (d) { return _this.dragged(d); })
+            .on("end", function (d) { return _this.dragended(d); }));
+        this.node.append("title")
             .text(function (d) { return d.id; });
-        simulation
-            .nodes(this.graph.nodes)
-            .on("tick", ticked);
-        simulation.force("link")
-            .links(this.graph.edges);
+        this.simulation
+            .nodes(this.netgraph.nodes)
+            .on("tick", function () { return _this.ticked(); });
+        this.simulation.force("link")
+            .links(this.netgraph.edges);
         function zoom_actions() {
             g.attr("transform", __WEBPACK_IMPORTED_MODULE_1_d3__["event"].transform);
         }
-        function ticked() {
-            link
-                .attr("x1", function (d) { return d.source.x; })
-                .attr("y1", function (d) { return d.source.y; })
-                .attr("x2", function (d) { return d.destination.x; })
-                .attr("y2", function (d) { return d.destination.y; });
-            node
-                .attr("cx", function (d) { return d.x; })
-                .attr("cy", function (d) { return d.y; });
-            /*console.log(node)
-            console.log(link) */
-        }
-        function dragstarted(d) {
-            if (!__WEBPACK_IMPORTED_MODULE_1_d3__["event"].active)
-                simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-        }
-        function dragged(d) {
-            d.fx = __WEBPACK_IMPORTED_MODULE_1_d3__["event"].x;
-            d.fy = __WEBPACK_IMPORTED_MODULE_1_d3__["event"].y;
-        }
-        function dragended(d) {
-            if (!__WEBPACK_IMPORTED_MODULE_1_d3__["event"].active)
-                simulation.alphaTarget(0);
-            d.fx = null;
-            d.fy = null;
-        }
+        var zoom_handler = __WEBPACK_IMPORTED_MODULE_1_d3__["zoom"]()
+            .on("zoom", function () { return g.attr("transform", __WEBPACK_IMPORTED_MODULE_1_d3__["event"].transform); });
+        zoom_handler(this.svg);
+    };
+    NetworkChartComponent.prototype.dragged = function (d) {
+        d.fx = __WEBPACK_IMPORTED_MODULE_1_d3__["event"].x;
+        d.fy = __WEBPACK_IMPORTED_MODULE_1_d3__["event"].y;
+    };
+    NetworkChartComponent.prototype.dragended = function (d) {
+        if (!__WEBPACK_IMPORTED_MODULE_1_d3__["event"].active)
+            this.simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+    };
+    NetworkChartComponent.prototype.dragstarted = function (d) {
+        if (!__WEBPACK_IMPORTED_MODULE_1_d3__["event"].active)
+            this.simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
     };
     return NetworkChartComponent;
 }());
@@ -1080,7 +1083,7 @@ __decorate([
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
     __metadata("design:type", Object)
-], NetworkChartComponent.prototype, "graph", void 0);
+], NetworkChartComponent.prototype, "netgraph", void 0);
 NetworkChartComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-network-chart',
@@ -1116,7 +1119,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/network/network.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<button class=\"btn btn-outline-primary\">Fetch Nodes</button>\n<button class=\"btn btn-outline-success\">Fetch Edges</button>\n<button class=\"btn btn-outline-danger\">Build Network</button>\n<!--<app-network-chart *ngIf=\"networkData\" [graph]=\"networkData\"></app-network-chart>-->\n\n\n"
+module.exports = "<button class=\"btn btn-outline-primary\">Fetch Nodes</button>\n<button class=\"btn btn-outline-success\">Fetch Edges</button>\n<button class=\"btn btn-outline-danger\">Build Network</button>\n<!--<app-network-chart *ngIf=\"networkData\" [graph]=\"networkData\"></app-network-chart>-->\n\n<app-network-chart *ngIf=\"networkData\" [netgraph]=\"networkData\"></app-network-chart>\n"
 
 /***/ }),
 
@@ -1249,7 +1252,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/searchbar/searchbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n\t<div class=\"row\">\n\t\t<p style=\"padding:90px\"></p>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"col-xs-12 col-sm-3\"></div>\n\t\t<div class=\"col-xs-12 col-sm-6\">\n\t\t\t<img src=\"assets/gowalla/social-network.svg\" width=\"45%\" height=\"50%\" alt=\"\" class=\"mx-auto d-block\">\t\n\t\t\t<p style=\"padding:5px\"></p>\n\t\t    <form class=\"form-inline my-2 my-lg-0 justify-content-center\">\n\t\t\t\t<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" #searchInput>\n\t\t\t    <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\" (click)=\"searchinfo.setSearchId(searchInput.value)\" routerLink='/home'>Submit</button>\n\t\t    </form>\t\t\t    \t\n\t\t</div>\n\t<div class=\"col-xs-12 col-sm-3\"></div>\n</div>"
+module.exports = "<div class=\"container-fluid\">\n\t<div class=\"row\">\n\t\t<p style=\"padding:90px\"></p>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"col-xs-12 col-sm-3\"></div>\n\t\t<div class=\"col-xs-12 col-sm-6\">\n\t\t\t<img src=\"assets/gowalla/social-network.svg\" width=\"45%\" height=\"50%\" alt=\"\" class=\"mx-auto d-block\">\t\n\t\t\t<p style=\"padding:5px\"></p>\n\t\t    <form class=\"form-inline my-2 my-lg-0 justify-content-center\">\n\t\t\t\t<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" #searchInput>\n\t\t\t    <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\" (click)=\"searchinfo.setSearchId(searchInput.value)\" routerLink='/home'>Submit</button>\n\t\t    </form>\t\t\t    \t\n\t\t</div>\n\t<div class=\"col-xs-12 col-sm-3\"></div>\n</div>\n"
 
 /***/ }),
 
@@ -1290,6 +1293,285 @@ SearchbarComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=searchbar.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/searchcloud/searchcloud.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/searchcloud/searchcloud.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  searchcloud works!\n</p>\n<input id=\"filter\" type=\"text\" (keyup)=\"generateSkillCloud(0)\" placeholder=\"Type a skill...\" />\n<div id=\"cloud\"></div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/searchcloud/searchcloud.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__skillsData__ = __webpack_require__("../../../../../src/app/searchcloud/skillsData.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_v4_cloud__ = __webpack_require__("../../../../d3-v4-cloud/build/d3-cloud.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_d3_v4_cloud___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_d3_v4_cloud__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_lodash__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchcloudComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var SearchcloudComponent = (function () {
+    function SearchcloudComponent() {
+    }
+    SearchcloudComponent.prototype.ngOnInit = function () {
+        this.minyears = __WEBPACK_IMPORTED_MODULE_4_lodash__["min"](__WEBPACK_IMPORTED_MODULE_4_lodash__["map"](__WEBPACK_IMPORTED_MODULE_1__skillsData__["a" /* skillsData */], 'years'));
+        this.maxyears = __WEBPACK_IMPORTED_MODULE_4_lodash__["max"](__WEBPACK_IMPORTED_MODULE_4_lodash__["map"](__WEBPACK_IMPORTED_MODULE_1__skillsData__["a" /* skillsData */], 'years'));
+        this.minfont = 18;
+        this.maxfont = 35;
+        this.width = 800;
+        this.height = 400;
+        this.fill = __WEBPACK_IMPORTED_MODULE_2_d3__["scaleOrdinal"](__WEBPACK_IMPORTED_MODULE_2_d3__["schemeCategory20"]);
+        this.MAX_TRIES = (this.width > 400) ? 6 : 3;
+        this.generateSkillCloud(0);
+    };
+    SearchcloudComponent.prototype.generateSkillCloud = function (retryCycle) {
+        var _this = this;
+        // let textfilter = document.getElementById('filter');
+        var textfilter = document.getElementById('filter').value;
+        var filterSkillsvar = __WEBPACK_IMPORTED_MODULE_4_lodash__["filter"](__WEBPACK_IMPORTED_MODULE_1__skillsData__["a" /* skillsData */], function (skill) { return !textfilter || skill.name.toLowerCase().indexOf(textfilter.toLowerCase()) >= 0; });
+        // let skillsToDraw = this.transformToCloudLayoutObjects(filterSkillsvar, retryCycle);
+        var skillsToDraw = __WEBPACK_IMPORTED_MODULE_4_lodash__["map"](filterSkillsvar, function (skill, retryCycle) {
+            var retval = {
+                text: skill.name.toLowerCase() + ':' + skill.years + 'y',
+                size: _this.toFontSize(skill.years, skill.relevancy, retryCycle)
+            };
+            return retval;
+        });
+        var layout;
+        layout = __WEBPACK_IMPORTED_MODULE_3_d3_v4_cloud__["cloud"]()
+            .size([this.width, this.height])
+            .words(skillsToDraw)
+            .rotate(function () { return (~~(Math.random() * 6) - 2.5) * 30; })
+            .font("Impact")
+            .fontSize(function (d) { return d.size; })
+            .on("end", function (fittedSkills) {
+            // check if all words fit and are included
+            if (fittedSkills.length == skillsToDraw.length) {
+                _this.drawSkillCloud(fittedSkills); // finished
+            }
+            else if (!retryCycle || retryCycle < _this.MAX_TRIES) {
+                // words are missing due to the random placement and limited room space
+                console.debug('retrying');
+                // try again and start counting retries
+                _this.generateSkillCloud((retryCycle || 1) + 1);
+            }
+            else {
+                // retries maxed and failed to fit all the words
+                console.debug('gave up :(');
+                // just draw what we have
+                _this.drawSkillCloud(fittedSkills);
+            }
+        })
+            .start();
+    };
+    /**
+     * 1. Determine font size based on years of experience relative to the skills with the least and most years of experience.
+     * 2. Further increase / decrease font size based on relevancy (linux 20y is could less relevant than java 3y, so relevancy
+     *    .2 vs 1.5 could work for example).
+     */
+    SearchcloudComponent.prototype.toFontSize = function (years, relevancy, retryCycle) {
+        // translate years scale to font size scale and apply relevancy factor
+        var linearSize = (((years - this.minyears) / (this.maxyears - this.minyears)) * (this.maxfont - this.minfont) * relevancy) + this.minfont;
+        // make the difference between small sizes and bigger sizes more pronounced for effect
+        var polarizedSize = Math.pow(linearSize / 8, 3);
+        // reduce the size as the retry cycles ramp up (due to too many words in too small space)
+        var reduceSize = polarizedSize; //* ((this.MAX_TRIES - retryCycle) / this.MAX_TRIES);
+        return ~~reduceSize;
+    };
+    SearchcloudComponent.prototype.drawSkillCloud = function (words) {
+        var _this = this;
+        __WEBPACK_IMPORTED_MODULE_2_d3__["select"]("#cloud svg").remove();
+        __WEBPACK_IMPORTED_MODULE_2_d3__["select"]("#cloud").append("svg")
+            .attr("width", this.width)
+            .attr("height", this.height)
+            .append("g")
+            .attr("transform", "translate(" + ~~(this.width / 2) + "," + ~~(this.height / 2) + ")")
+            .selectAll("text")
+            .data(words)
+            .enter().append("text")
+            .style("font-size", function (d) { return d.size + "px"; })
+            .style("-webkit-touch-callout", "none")
+            .style("-webkit-user-select", "none")
+            .style("-khtml-user-select", "none")
+            .style("-moz-user-select", "none")
+            .style("-ms-user-select", "none")
+            .style("user-select", "none")
+            .style("cursor", "default")
+            .style("font-family", "Impact")
+            .style("fill", function (d, i) { return _this.fill(i); })
+            .attr("text-anchor", "middle")
+            .attr("transform", function (d) { return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")"; })
+            .text(function (d) { return d.text; });
+        // set the viewbox to content bounding box (zooming in on the content, effectively trimming whitespace)
+        var svg = document.getElementsByTagName("svg")[0];
+        var bbox = svg.getBBox();
+        var viewBox = [bbox.x, bbox.y, bbox.width, bbox.height].join(" ");
+        svg.setAttribute("viewBox", viewBox);
+    };
+    return SearchcloudComponent;
+}());
+SearchcloudComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+        selector: 'app-searchcloud',
+        template: __webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], SearchcloudComponent);
+
+//# sourceMappingURL=searchcloud.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/searchcloud/skillsData.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return skillsData; });
+var skillsData = [
+    { "name": "Java", "years": 11, "relevancy": 1.3 },
+    { "name": "JavaScript", "years": 14, "relevancy": 1 },
+    { "name": "Nightwatch", "years": 3, "relevancy": 1 },
+    { "name": "PhantomJs", "years": 3, "relevancy": .7 },
+    { "name": "jasmine", "years": 2, "relevancy": 1.1 },
+    { "name": "qunit", "years": 1, "relevancy": .8 },
+    { "name": "HTML", "years": 15, "relevancy": .7 },
+    { "name": "PHP", "years": 2, "relevancy": .5 },
+    { "name": "CSS", "years": 14, "relevancy": .7 },
+    { "name": "Flash", "years": 9, "relevancy": .2 },
+    { "name": "Actionscript", "years": 9, "relevancy": .3 },
+    { "name": "Flex", "years": 1, "relevancy": .2 },
+    { "name": "Delphi", "years": 3, "relevancy": .3 },
+    { "name": "Apache", "years": 3, "relevancy": .75 },
+    { "name": "IBM WebSphere", "years": 3, "relevancy": .75 },
+    { "name": "Tomcat", "years": 2, "relevancy": .75 },
+    { "name": "Oracle OC4J", "years": 1, "relevancy": .5 },
+    { "name": "Jetty", "years": 2, "relevancy": .75 },
+    { "name": "JUnit", "years": 8, "relevancy": .8 },
+    { "name": "Struts", "years": 2, "relevancy": .3 },
+    { "name": "Spring", "years": 7, "relevancy": 1.3 },
+    { "name": "J2EE", "years": 7, "relevancy": 1 },
+    { "name": "JPA", "years": 4, "relevancy": .8 },
+    { "name": "Hibernate", "years": 4, "relevancy": 1 },
+    { "name": "EclipseLink", "years": 2, "relevancy": 1 },
+    { "name": "JMock/EasyMock", "years": 5, "relevancy": .8 },
+    { "name": "JSF", "years": 6, "relevancy": .9 },
+    { "name": "Facelets", "years": 6, "relevancy": .5 },
+    { "name": "Richfaces", "years": 6, "relevancy": .5 },
+    { "name": "Flying Saucer", "years": 1, "relevancy": .5 },
+    { "name": "JAXB", "years": 5, "relevancy": .8 },
+    { "name": "JAXWS", "years": 2, "relevancy": 5 },
+    { "name": "SOAP", "years": 2, "relevancy": 5 },
+    { "name": "Apache commons", "years": 6, "relevancy": .75 },
+    { "name": "Google Guava", "years": 4, "relevancy": .75 },
+    { "name": "Jackson", "years": 1, "relevancy": .6 },
+    { "name": "Jersey", "years": 1, "relevancy": .6 },
+    { "name": "KnockoutJs", "years": 3, "relevancy": .8 },
+    { "name": "Mustache", "years": 1, "relevancy": .6 },
+    { "name": "HandlebarsJs", "years": 2, "relevancy": .6 },
+    { "name": "Sammy", "years": 3, "relevancy": .7 },
+    { "name": "RequireJs", "years": 3, "relevancy": 1 },
+    { "name": "ANT", "years": 9, "relevancy": .8 },
+    { "name": "CVS", "years": 2, "relevancy": .3 },
+    { "name": "Subversion", "years": 8, "relevancy": .5 },
+    { "name": "SVN", "years": 8, "relevancy": .5 },
+    { "name": "GIT", "years": 4, "relevancy": .8 },
+    { "name": "Maven", "years": 5, "relevancy": .5 },
+    { "name": "IBM ClearCase", "years": 2, "relevancy": .3 },
+    { "name": "JSP", "years": 4, "relevancy": .3 },
+    { "name": "Servlets", "years": 5, "relevancy": .5 },
+    { "name": "XML", "years": 13, "relevancy": .5 },
+    { "name": "DTD", "years": 3, "relevancy": .5 },
+    { "name": "XML SAX", "years": 3, "relevancy": .4 },
+    { "name": "XML DOM", "years": 11, "relevancy": .4 },
+    { "name": "xpath", "years": 4, "relevancy": .7 },
+    { "name": "Cruisecontrol", "years": 3, "relevancy": .3 },
+    { "name": "RegEx", "years": 6, "relevancy": .5 },
+    { "name": "UML", "years": 5, "relevancy": .7 },
+    { "name": "Agile", "years": 7, "relevancy": .8 },
+    { "name": "Scrum", "years": 6, "relevancy": 1 },
+    { "name": "Kanban", "years": 1, "relevancy": .8 },
+    { "name": "MySQL", "years": 8, "relevancy": .8 },
+    { "name": "Oracle", "years": 2, "relevancy": .7 },
+    { "name": "DB2/AS400", "years": 2, "relevancy": .7 },
+    { "name": "Linux", "years": 3, "relevancy": .2 },
+    { "name": "Windows", "years": 21, "relevancy": .2 },
+    { "name": "Android", "years": 2, "relevancy": .5 },
+    { "name": "WSAD5", "years": 2, "relevancy": .3 },
+    { "name": "RAD6", "years": 2, "relevancy": .3 },
+    { "name": "Eclipse IDE", "years": 8, "relevancy": .5 },
+    { "name": "Docker", "years": 1, "relevancy": 1 },
+    { "name": "ActiveMq", "years": 3, "relevancy": .8 },
+    { "name": "RabbitMq", "years": 1, "relevancy": .8 },
+    { "name": "IntelliJ", "years": 2, "relevancy": .5 },
+    { "name": "WebStorm", "years": 2, "relevancy": .5 },
+    { "name": "Grunt", "years": 3, "relevancy": 2 },
+    { "name": "gulp", "years": 2, "relevancy": 2 },
+    { "name": "WebPack", "years": 1, "relevancy": 3 },
+    { "name": "bootstrap", "years": 1, "relevancy": 1.5 },
+    { "name": "angularjs", "years": 4, "relevancy": 2 },
+    { "name": "jquery", "years": 10, "relevancy": 1 },
+    { "name": "lodash", "years": 3, "relevancy": .9 },
+    { "name": "underscore", "years": 3, "relevancy": .8 },
+    { "name": "sammy", "years": 4, "relevancy": 1 },
+    { "name": "knockoutjs", "years": 4, "relevancy": .8 },
+    { "name": "requirejs", "years": 4, "relevancy": 1.2 },
+    { "name": "commonjs", "years": 1, "relevancy": 1.2 },
+    { "name": "jms", "years": 8, "relevancy": .7 },
+    { "name": "rest", "years": 6, "relevancy": .6 },
+    { "name": "nodejs", "years": 2, "relevancy": 1 },
+    { "name": "npm", "years": 3, "relevancy": .8 },
+    { "name": "bower", "years": 3, "relevancy": .5 },
+    { "name": "cloud9", "years": 4, "relevancy": .5 },
+    { "name": "Amazon AWS", "years": 2, "relevancy": .7 },
+    { "name": "AWS Route53", "years": 1, "relevancy": .75 },
+    { "name": "AWS CloudFront", "years": 1, "relevancy": .75 },
+    { "name": "Fitnesse", "years": 1, "relevancy": .75 },
+    { "name": "AWS EC2", "years": 2, "relevancy": .75 },
+    { "name": "AWS Lambda", "years": 1, "relevancy": .75 },
+    { "name": "AWS S3", "years": 2, "relevancy": .75 },
+    { "name": "C#", "years": 1, "relevancy": .3 },
+    { "name": "Alfresco", "years": 1, "relevancy": .3 }
+];
+//# sourceMappingURL=skillsData.js.map
 
 /***/ }),
 
@@ -1412,6 +1694,266 @@ TabviewComponent = __decorate([
 ], TabviewComponent);
 
 //# sourceMappingURL=tabview.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/tree/tree.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".node {\n  cursor: pointer;\n}\n\n.node circle {\n  fill: #fff;\n  stroke: steelblue;\n  stroke-width: 3px;\n}\n\n.node text {\n  font: 10px sans-serif;\n}\n\n.link {\n  fill: none;\n  stroke: #ccc;\n  stroke-width: 2px;\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/tree/tree.component.html":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "../../../../../src/app/tree/tree.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__treeData__ = __webpack_require__("../../../../../src/app/tree/treeData.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TreeComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TreeComponent = (function () {
+    function TreeComponent() {
+    }
+    // ngOnInit() { }
+    TreeComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        var margin = { top: 20, right: 120, bottom: 20, left: 120 };
+        var width = 960 - margin.right - margin.left;
+        var height = 800 - margin.top - margin.bottom;
+        this.svg = __WEBPACK_IMPORTED_MODULE_2_d3__["select"]("app-tree").append("svg")
+            .attr("width", width + margin.right + margin.left)
+            .attr("height", height + margin.top + margin.bottom) //;
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        this.i = 0;
+        this.duration = 300;
+        this.r = 5;
+        this.root = null;
+        this.treemap = __WEBPACK_IMPORTED_MODULE_2_d3__["tree"]().size([height, width]);
+        this.root = __WEBPACK_IMPORTED_MODULE_2_d3__["hierarchy"](__WEBPACK_IMPORTED_MODULE_1__treeData__["a" /* treeData */], function (d) { return d.children; });
+        this.root.x0 = height / 2;
+        this.root.y0 = 0;
+        this.root.children.forEach(function (d) { return _this.collapse(d); });
+        this.update(this.root);
+        // d3.select(self.frameElement).style("height", "800px");
+    };
+    TreeComponent.prototype.collapse = function (d) {
+        var _this = this;
+        if (d.children) {
+            d._children = d.children;
+            d._children.forEach(function (d) { return _this.collapse(d); });
+            d.children = null;
+        }
+    };
+    TreeComponent.prototype.update = function (source) {
+        var _this = this;
+        var treeData = this.treemap(this.root);
+        // Compute the new tree layout.
+        var nodes = treeData.descendants();
+        var links = treeData.descendants().slice(1);
+        // Normalize for fixed-depth.
+        nodes.forEach(function (d) { d.y = d.depth * 180; });
+        // Update the nodes…
+        var node = this.svg.selectAll('g.node')
+            .data(nodes, function (d) { return d.id || (d.id = ++_this.i); });
+        // Enter any new nodes at the parent's previous position.
+        var nodeEnter = node.enter().append('g')
+            .attr('class', 'node')
+            .attr("transform", function (d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+            .on('click', function (d) { return _this.click(d); });
+        nodeEnter.append('circle')
+            .attr('class', 'node')
+            .attr('r', 1e-6)
+            .style("fill", function (d) { return d._children ? "lightsteelblue" : "#fff"; });
+        nodeEnter.append("text")
+            .attr("dy", ".35em")
+            .attr("x", function (d) { return d.children || d._children ? -13 : 13; })
+            .attr("text-anchor", function (d) { return d.children || d._children ? "end" : "start"; })
+            .text(function (d) { return d.data.name; })
+            .style("fill-opacity", 0.5);
+        // Transition nodes to their new position.
+        var nodeUpdate = nodeEnter.merge(node);
+        nodeUpdate.transition()
+            .duration(this.duration)
+            .attr("transform", function (d) { return "translate(" + d.y + "," + d.x + ")"; });
+        nodeUpdate.select('circle')
+            .attr('r', this.r)
+            .style("fill", function (d) { return d._children ? "lightsteelblue" : "#fff"; });
+        /*nodeUpdate.select("text")
+                      .style("fill-opacity", 0.5);*/
+        // Transition exiting nodes to the parent's new position.
+        var nodeExit = node.exit().transition()
+            .duration(this.duration)
+            .attr("transform", function (d) { return "translate(" + source.y + "," + source.x + ")"; })
+            .remove();
+        nodeExit.select('circle')
+            .attr('r', 1e-6);
+        nodeExit.select('text')
+            .style('fill-opacity', 1e-6);
+        // Update the links
+        var link = this.svg.selectAll('path.link')
+            .data(links, function (d) { return d.id; });
+        // Enter any new links at the parent's previous position.
+        var linkEnter = link.enter().insert('path', 'g')
+            .attr("class", "link")
+            .attr('d', function (d) {
+            var o = { x: source.x0, y: source.y0 };
+            return _this.diagonal(o, o);
+        });
+        // Transition links to their new position.
+        var linkUpdate = linkEnter.merge(link);
+        linkUpdate.transition()
+            .duration(this.duration)
+            .attr("d", function (d) { return _this.diagonal(d, d.parent); });
+        // Transition exiting nodes to the parent's new position.
+        var linkExit = link.exit().transition()
+            .duration(this.duration)
+            .attr("d", function (d) {
+            var o = { x: source.x, y: source.y };
+            return _this.diagonal(o, o);
+        })
+            .remove();
+        // Stash the old positions for transition.
+        nodes.forEach(function (d) {
+            d.x0 = d.x;
+            d.y0 = d.y;
+        });
+    };
+    TreeComponent.prototype.diagonal = function (s, d) {
+        var path = "M " + s.y + " " + s.x + "\n                C " + (s.y + d.y) / 2 + " " + s.x + ",\n                " + (s.y + d.y) / 2 + " " + d.x + ",\n                " + d.y + " " + d.x;
+        return path;
+    };
+    TreeComponent.prototype.click = function (d) {
+        if (d.children) {
+            d._children = d.children;
+            d.children = null;
+        }
+        else {
+            d.children = d._children;
+            d._children = null;
+        }
+        this.update(d);
+    };
+    return TreeComponent;
+}());
+TreeComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+        selector: 'app-tree',
+        encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None,
+        template: __webpack_require__("../../../../../src/app/tree/tree.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/tree/tree.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], TreeComponent);
+
+//# sourceMappingURL=tree.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/tree/treeData.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return treeData; });
+var treeData = 
+/*  {
+    "name": "Top Level",
+    "parent": "null",
+    "children": [
+      {
+        "name": "Level 2: A",
+        "parent": "Top Level",
+        "children": [
+          { "name": "Son of A", "parent": "Level 2: A" },
+          { "name": "Daughter of A", "parent": "Level 2: A" }
+        ]
+      },
+      { "name": "Level 2: B",
+        "parent": "Top Level"
+      }
+    ]
+  };*/
+//  treeData = [
+{
+    "name": "Top Level",
+    "parent": "null",
+    "children": [
+        {
+            "name": "Level 2: A",
+            "parent": "Top Level",
+            "children": [
+                {
+                    "name": "Son of A",
+                    "parent": "Level 2: A"
+                },
+                {
+                    "name": "Daughter of A",
+                    "parent": "Level 2: A",
+                    "children": [
+                        {
+                            "name": "Son of Daughter of A",
+                            "parent": "Level 2: A"
+                        },
+                        {
+                            "name": "Son of Daughter of A",
+                            "parent": "Level 2: A"
+                        },
+                        {
+                            "name": "Son of Daughter of A",
+                            "parent": "Level 2: A"
+                        },
+                        {
+                            "name": "Son of Daughter of A",
+                            "parent": "Level 2: A"
+                        },
+                        {
+                            "name": "Daughter^2 of A",
+                            "parent": "Level 2: A"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Level 2: B",
+            "parent": "Top Level"
+        }
+    ]
+};
+//]; 
+//# sourceMappingURL=treeData.js.map
 
 /***/ }),
 

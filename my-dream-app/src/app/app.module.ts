@@ -23,11 +23,13 @@ import { NetworkChartComponent } from './network-chart/network-chart.component';
 import { FlagsComponent } from './flags/flags.component';
 import { FlagChartComponent } from './flag-chart/flag-chart.component';
 import { WordsService } from './flags/words.service';
+import { TreeComponent } from './tree/tree.component';
+import { SearchcloudComponent } from './searchcloud/searchcloud.component';
 
-//import { D3Service } from 'd3-ng2-service';
+// import { D3Service } from 'd3-ng2-service';
 //import { TestD3Component } from './test-d3/test-d3.component';
 //import { BrushZoomComponent } from './brush-zoom/brush-zoom.component';
-//import { NetworkChart2Component } from './network-chart-2/network-chart-2.component';
+// import { NetworkChart2Component } from './network-chart-2/network-chart-2.component';
 
 @NgModule({
   declarations: [
@@ -44,16 +46,17 @@ import { WordsService } from './flags/words.service';
     NetworkChartComponent,
     FlagsComponent,
     FlagChartComponent,
-    CountryComponent
- /*   TestD3Component,
-    BrushZoomComponent,
-    NetworkChart2Component*/
+    CountryComponent,
+ /* TestD3Component,
+    BrushZoomComponent, */
+    TreeComponent,
+    SearchcloudComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule    
+    HttpModule
   ],
   providers: [SearchQuery, NetworkService, WordsService], //D3Service
   bootstrap: [AppComponent]
