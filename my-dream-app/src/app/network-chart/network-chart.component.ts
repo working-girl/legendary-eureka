@@ -12,7 +12,10 @@ import * as d3 from 'd3';
 export class NetworkChartComponent implements AfterViewInit {
 
   @ViewChild('network') element: ElementRef;
-  @Input() private netgraph;
+  //@Input() private netgraph;
+  //@Input() private nodes;
+  @Input() private edges;
+  private nodes: any
 
   private svg: d3.Selection;
   private color: any;
@@ -23,6 +26,17 @@ export class NetworkChartComponent implements AfterViewInit {
   constructor() { }
 
   ngAfterViewInit() {
+
+    let myNodes = new Array()
+    this.edges.map(function(d) {
+        return myNodes.push({"id": d.target})
+    });
+    let source = this.edges.map(function(d) {return d.source;});
+    myNodes.push({"id": source[0]})
+    this.nodes = myNodes
+    //console.log(this.nodes)
+    //console.log(this.edges)
+
     this.setup();
     this.drawGraph();
   }
@@ -50,9 +64,14 @@ export class NetworkChartComponent implements AfterViewInit {
 
     this.color = d3.scaleOrdinal(d3.schemeCategory20);
     this.simulation = d3.forceSimulation()
-      .force("link", d3.forceLink().id((d) => { return d.id; }))
+      .force("link", d3.forceLink().id((d) => {return d.id; }))
       .force("charge", d3.forceManyBody().strength(-400))
       .force("center", d3.forceCenter(width / 2, height / 2));
+  }
+
+
+  getNodes(edges:any) {
+
   }
 
   ticked() {
@@ -73,15 +92,19 @@ export class NetworkChartComponent implements AfterViewInit {
     this.link = g.append("g")
       .attr("class", "links")
       .selectAll("line")
-      .data(this.netgraph.edges)
+      .data(this.edges)
       .enter().append("line")
-      .attr("stroke", "#999");
-      //.attr("stroke-width", function(d) { return Math.sqrt(d.value);});
+      .attr("stroke", "#999")
+      .attr("stroke-width", 2);
+      //.attr("stroke-width", function(d) { 
+        //console.log(d)
+        //return Math.sqrt(d.value);
+      //});
 
     this.node = g.append("g")
       .attr("class", "nodes")
       .selectAll("circle")
-      .data(this.netgraph.nodes)
+      .data(this.nodes)
       .enter().append("circle")
         .attr("r", 5)
         //.attr("fill", function(d) {return color(d.group); })
@@ -95,11 +118,11 @@ export class NetworkChartComponent implements AfterViewInit {
       .text((d) => { return d.id; });
 
     this.simulation
-      .nodes(this.netgraph.nodes)
+      .nodes(this.nodes)
       .on("tick", ()=>{return this.ticked()});
 
     this.simulation.force("link")
-      .links(this.netgraph.edges);
+      .links(this.edges);
 
     function zoom_actions(){
         g.attr("transform", d3.event.transform)

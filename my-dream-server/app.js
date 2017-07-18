@@ -30,8 +30,8 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/my-dream-app/home/network', nodesRoutes);
-app.use('/my-dream-app/home/network', edgesRoutes);
+app.use('/my-dream-app/home/network/edges', edgesRoutes);
+app.use('/my-dream-app/home/network/nodes', nodesRoutes);
 app.use('/', appRoutes);
 
 

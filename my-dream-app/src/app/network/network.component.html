@@ -1,6 +1,7 @@
-<button class="btn btn-outline-primary">Fetch Nodes</button>
-<button class="btn btn-outline-success">Fetch Edges</button>
-<button class="btn btn-outline-danger">Build Network</button>
+<!--<button class="btn btn-outline-primary" (click)="getNodes()">Fetch Nodes</button>-->
+<button class="btn btn-outline-success" (click)="getEdges()">Fetch Data</button>
+<button class="btn btn-outline-danger" (click)=buildNetwork()>Build Network</button>
 <!--<app-network-chart *ngIf="networkData" [graph]="networkData"></app-network-chart>-->
 
-<app-network-chart *ngIf="networkData" [netgraph]="networkData"></app-network-chart>
+<app-network-chart *ngIf="edges" [edges]="edges"></app-network-chart>
+

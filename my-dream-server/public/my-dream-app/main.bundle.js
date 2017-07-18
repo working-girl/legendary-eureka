@@ -26,6 +26,7 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__flags_flags_component__ = __webpack_require__("../../../../../src/app/flags/flags.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__country_country_component__ = __webpack_require__("../../../../../src/app/country/country.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__searchcloud_searchcloud_component__ = __webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__timeline_timeline_component__ = __webpack_require__("../../../../../src/app/timeline/timeline.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -33,6 +34,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -66,7 +68,17 @@ var routes = [
             },
             {
                 path: 'network',
-                component: __WEBPACK_IMPORTED_MODULE_4__network_network_component__["a" /* NetworkComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_4__network_network_component__["a" /* NetworkComponent */]
+                /*children: [
+                  {
+                    path: 'nodes',
+                    component: NetworkComponent
+                  },
+                  {
+                    path: 'edges',
+                    component: NetworkComponent
+                  }
+                ]*/
             },
             {
                 path: 'flags',
@@ -75,6 +87,10 @@ var routes = [
             {
                 path: 'tree',
                 component: __WEBPACK_IMPORTED_MODULE_5__tree_tree_component__["a" /* TreeComponent */],
+            },
+            {
+                path: 'gant',
+                component: __WEBPACK_IMPORTED_MODULE_9__timeline_timeline_component__["a" /* TimelineComponent */],
             }
         ]
     }
@@ -140,7 +156,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -179,6 +195,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__flags_words_service__ = __webpack_require__("../../../../../src/app/flags/words.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__tree_tree_component__ = __webpack_require__("../../../../../src/app/tree/tree.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__searchcloud_searchcloud_component__ = __webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__timeline_timeline_component__ = __webpack_require__("../../../../../src/app/timeline/timeline.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -186,6 +203,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -239,7 +257,8 @@ AppModule = __decorate([
             /* TestD3Component,
                BrushZoomComponent, */
             __WEBPACK_IMPORTED_MODULE_22__tree_tree_component__["a" /* TreeComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__searchcloud_searchcloud_component__["a" /* SearchcloudComponent */]
+            __WEBPACK_IMPORTED_MODULE_23__searchcloud_searchcloud_component__["a" /* SearchcloudComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__timeline_timeline_component__["a" /* TimelineComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -319,7 +338,7 @@ var CountryComponent = (function () {
     return CountryComponent;
 }());
 CountryComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-country',
         template: __webpack_require__("../../../../../src/app/country/country.component.html"),
         styles: [__webpack_require__("../../../../../src/app/country/country.component.css")]
@@ -380,7 +399,7 @@ var DescCardComponent = (function () {
     return DescCardComponent;
 }());
 DescCardComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-desc-card',
         template: __webpack_require__("../../../../../src/app/desc-card/desc-card.component.html"),
         styles: [__webpack_require__("../../../../../src/app/desc-card/desc-card.component.css")]
@@ -508,7 +527,7 @@ var FlagChartComponent = (function () {
     return FlagChartComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('flagcloud'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('flagcloud'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], FlagChartComponent.prototype, "element", void 0);
 __decorate([
@@ -520,7 +539,7 @@ __decorate([
     __metadata("design:type", Object)
 ], FlagChartComponent.prototype, "words", void 0);
 FlagChartComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-flag-chart',
         template: __webpack_require__("../../../../../src/app/flag-chart/flag-chart.component.html"),
         styles: [__webpack_require__("../../../../../src/app/flag-chart/flag-chart.component.css")]
@@ -611,7 +630,7 @@ var FlagsComponent = (function () {
     return FlagsComponent;
 }());
 FlagsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-flags',
         template: __webpack_require__("../../../../../src/app/flags/flags.component.html"),
         styles: [__webpack_require__("../../../../../src/app/flags/flags.component.css")]
@@ -703,7 +722,7 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-home',
         template: __webpack_require__("../../../../../src/app/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
@@ -771,7 +790,7 @@ var IdcardComponent = (function () {
     return IdcardComponent;
 }());
 IdcardComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-idcard',
         template: __webpack_require__("../../../../../src/app/idcard/idcard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/idcard/idcard.component.css")]
@@ -865,7 +884,7 @@ var NavStatsComponent = (function () {
     return NavStatsComponent;
 }());
 NavStatsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-nav-stats',
         template: __webpack_require__("../../../../../src/app/nav-stats/nav-stats.component.html"),
         styles: [__webpack_require__("../../../../../src/app/nav-stats/nav-stats.component.css")]
@@ -898,7 +917,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse bg-inverse\">\n \t<button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    \t<span class=\"navbar-toggler-icon\"></span>\n \t</button>\n  <a class=\"navbar-brand\" routerLink=\"/\" routerLinkActive=\"active\">MyDreamApp</a>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"/home\" routerLinkActive=\"active\">Home</a>\n      </li>                 \n    </ul>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse bg-inverse\">\n \t<button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    \t<span class=\"navbar-toggler-icon\"></span>\n \t</button>\n  <a class=\"navbar-brand\" routerLink=\"/\" routerLinkActive=\"active\">MyDreamApp</a>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item active\">\n        <a class=\"nav-link\" routerLink=\"/home\" routerLinkActive=\"active\">Home</a>\n      </li>                 \n    </ul>\n\n    <form class=\"form-inline my-2 my-lg-0 justify-content-center\">\n\t\t<input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Search\" #searchInput>\n\t\t<button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\" (click)=\"searchinfo.setSearchId(searchInput.value)\" routerLink='/home'>Submit</button>\n\t</form>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -907,6 +926,7 @@ module.exports = "<nav class=\"navbar navbar-toggleable-md navbar-inverse bg-inv
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_search_query_model__ = __webpack_require__("../../../../../src/app/models/search-query.model.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -918,22 +938,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var NavbarComponent = (function () {
-    function NavbarComponent() {
+    function NavbarComponent(searchinfo) {
+        this.searchinfo = searchinfo;
     }
     NavbarComponent.prototype.ngOnInit = function () {
     };
     return NavbarComponent;
 }());
 NavbarComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-navbar',
         template: __webpack_require__("../../../../../src/app/navbar/navbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/navbar/navbar.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__models_search_query_model__["a" /* SearchQuery */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__models_search_query_model__["a" /* SearchQuery */]) === "function" && _a || Object])
 ], NavbarComponent);
 
+var _a;
 //# sourceMappingURL=navbar.component.js.map
 
 /***/ }),
@@ -987,6 +1010,15 @@ var NetworkChartComponent = (function () {
     function NetworkChartComponent() {
     }
     NetworkChartComponent.prototype.ngAfterViewInit = function () {
+        var myNodes = new Array();
+        this.edges.map(function (d) {
+            return myNodes.push({ "id": d.target });
+        });
+        var source = this.edges.map(function (d) { return d.source; });
+        myNodes.push({ "id": source[0] });
+        this.nodes = myNodes;
+        //console.log(this.nodes)
+        //console.log(this.edges)
         this.setup();
         this.drawGraph();
     };
@@ -1014,6 +1046,8 @@ var NetworkChartComponent = (function () {
             .force("charge", __WEBPACK_IMPORTED_MODULE_1_d3__["forceManyBody"]().strength(-400))
             .force("center", __WEBPACK_IMPORTED_MODULE_1_d3__["forceCenter"](width / 2, height / 2));
     };
+    NetworkChartComponent.prototype.getNodes = function (edges) {
+    };
     NetworkChartComponent.prototype.ticked = function () {
         this.link
             .attr("x1", function (d) { return d.source.x; })
@@ -1030,14 +1064,18 @@ var NetworkChartComponent = (function () {
         this.link = g.append("g")
             .attr("class", "links")
             .selectAll("line")
-            .data(this.netgraph.edges)
+            .data(this.edges)
             .enter().append("line")
-            .attr("stroke", "#999");
-        //.attr("stroke-width", function(d) { return Math.sqrt(d.value);});
+            .attr("stroke", "#999")
+            .attr("stroke-width", 2);
+        //.attr("stroke-width", function(d) { 
+        //console.log(d)
+        //return Math.sqrt(d.value);
+        //});
         this.node = g.append("g")
             .attr("class", "nodes")
             .selectAll("circle")
-            .data(this.netgraph.nodes)
+            .data(this.nodes)
             .enter().append("circle")
             .attr("r", 5)
             .call(__WEBPACK_IMPORTED_MODULE_1_d3__["drag"]()
@@ -1047,10 +1085,10 @@ var NetworkChartComponent = (function () {
         this.node.append("title")
             .text(function (d) { return d.id; });
         this.simulation
-            .nodes(this.netgraph.nodes)
+            .nodes(this.nodes)
             .on("tick", function () { return _this.ticked(); });
         this.simulation.force("link")
-            .links(this.netgraph.edges);
+            .links(this.edges);
         function zoom_actions() {
             g.attr("transform", __WEBPACK_IMPORTED_MODULE_1_d3__["event"].transform);
         }
@@ -1077,15 +1115,15 @@ var NetworkChartComponent = (function () {
     return NetworkChartComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('network'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('network'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], NetworkChartComponent.prototype, "element", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Input */])(),
     __metadata("design:type", Object)
-], NetworkChartComponent.prototype, "netgraph", void 0);
+], NetworkChartComponent.prototype, "edges", void 0);
 NetworkChartComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-network-chart',
         template: __webpack_require__("../../../../../src/app/network-chart/network-chart.component.html"),
         styles: [__webpack_require__("../../../../../src/app/network-chart/network-chart.component.css")],
@@ -1119,7 +1157,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/network/network.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<button class=\"btn btn-outline-primary\">Fetch Nodes</button>\n<button class=\"btn btn-outline-success\">Fetch Edges</button>\n<button class=\"btn btn-outline-danger\">Build Network</button>\n<!--<app-network-chart *ngIf=\"networkData\" [graph]=\"networkData\"></app-network-chart>-->\n\n<app-network-chart *ngIf=\"networkData\" [netgraph]=\"networkData\"></app-network-chart>\n"
+module.exports = "<!--<button class=\"btn btn-outline-primary\" (click)=\"getNodes()\">Fetch Nodes</button>-->\n<button class=\"btn btn-outline-success\" (click)=\"getEdges()\">Fetch Data</button>\n<button class=\"btn btn-outline-danger\" (click)=buildNetwork()>Build Network</button>\n<!--<app-network-chart *ngIf=\"networkData\" [graph]=\"networkData\"></app-network-chart>-->\n\n<app-network-chart *ngIf=\"edges\" [edges]=\"edges\"></app-network-chart>\n\n"
 
 /***/ }),
 
@@ -1130,6 +1168,7 @@ module.exports = "<button class=\"btn btn-outline-primary\">Fetch Nodes</button>
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__network_service__ = __webpack_require__("../../../../../src/app/network/network.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__models_search_query_model__ = __webpack_require__("../../../../../src/app/models/search-query.model.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__network_chart_network_chart_component__ = __webpack_require__("../../../../../src/app/network-chart/network-chart.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NetworkComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1143,34 +1182,53 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var NetworkComponent = (function () {
     function NetworkComponent(dataService, userinfo) {
         this.dataService = dataService;
         this.userinfo = userinfo;
     }
     NetworkComponent.prototype.ngOnInit = function () {
-        this.getNetworkData(this.userinfo.getSearchId());
+        //this.getNetworkData(this.userinfo.getSearchId())
     };
-    NetworkComponent.prototype.getNetworkData = function (id) {
-        this.dataService.getRelations(id).subscribe(function (data) {
-            //this.networkData = data
+    NetworkComponent.prototype.getNodes = function () {
+        var _this = this;
+        this.dataService.getNodes(this.userinfo.getSearchId()).subscribe(function (data) {
+            _this.checkins = data;
             console.log(data);
         }, function (error) {
             console.error(error);
         });
     };
+    NetworkComponent.prototype.getEdges = function () {
+        var _this = this;
+        this.dataService.getEdges(this.userinfo.getSearchId()).subscribe(function (data) {
+            _this.edges = data.edges;
+            //console.log(data)
+            console.log(data.edges);
+        }, function (error) {
+            console.error(error);
+        });
+    };
+    NetworkComponent.prototype.buildNetwork = function () {
+        this.networkChartComponent.ngAfterViewInit();
+    };
     return NetworkComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3__network_chart_network_chart_component__["a" /* NetworkChartComponent */]),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__network_chart_network_chart_component__["a" /* NetworkChartComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__network_chart_network_chart_component__["a" /* NetworkChartComponent */]) === "function" && _a || Object)
+], NetworkComponent.prototype, "networkChartComponent", void 0);
 NetworkComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-network',
         template: __webpack_require__("../../../../../src/app/network/network.component.html"),
         styles: [__webpack_require__("../../../../../src/app/network/network.component.css")],
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__network_service__["a" /* NetworkService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__network_service__["a" /* NetworkService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__models_search_query_model__["a" /* SearchQuery */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__models_search_query_model__["a" /* SearchQuery */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__network_service__["a" /* NetworkService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__network_service__["a" /* NetworkService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__models_search_query_model__["a" /* SearchQuery */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__models_search_query_model__["a" /* SearchQuery */]) === "function" && _c || Object])
 ], NetworkComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=network.component.js.map
 
 /***/ }),
@@ -1207,15 +1265,20 @@ var NetworkService = (function () {
     function NetworkService(http) {
         this.http = http;
     }
-    /*getUserRelations(id: string): Observable<any> {
+    /*getTestData(id: string): Observable<any> {
       return this.http
           .get('assets/gowalla/data.json', {})
           .map( res => res.json())
       }*/
-    /*get relations from mongodbd for specific user*/
-    NetworkService.prototype.getRelations = function (id) {
-        console.log('requesting contacts on user: ' + id);
-        return this.http.get("http://localhost:3001/my-dream-app/home/network/" + id)
+    NetworkService.prototype.getNodes = function (id) {
+        console.log('requesting nodes on user: ' + id);
+        return this.http.get("http://localhost:3001/my-dream-app/home/network/nodes/" + id)
+            .map(function (res) { return res.json(); })
+            .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json()); });
+    };
+    NetworkService.prototype.getEdges = function (id) {
+        console.log('requesting edges on user: ' + id);
+        return this.http.get("http://localhost:3001/my-dream-app/home/network/edges/" + id)
             .map(function (res) { return res.json(); })
             .catch(function (error) { return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json()); });
     };
@@ -1283,7 +1346,7 @@ var SearchbarComponent = (function () {
     return SearchbarComponent;
 }());
 SearchbarComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-searchbar',
         template: __webpack_require__("../../../../../src/app/searchbar/searchbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/searchbar/searchbar.component.css")]
@@ -1463,11 +1526,11 @@ var SearchcloudComponent = (function () {
     return SearchcloudComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('flagcloud'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('flagcloud'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], SearchcloudComponent.prototype, "element", void 0);
 SearchcloudComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-searchcloud',
         template: __webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.html"),
         styles: [__webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.css")]
@@ -1643,7 +1706,7 @@ var StatsComponent = (function () {
     return StatsComponent;
 }());
 StatsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-stats',
         template: __webpack_require__("../../../../../src/app/stats/stats.component.html"),
         styles: [__webpack_require__("../../../../../src/app/stats/stats.component.css")]
@@ -1676,7 +1739,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/tabview/tabview.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"nav nav-tabs nav-fill\">\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/network\">Network</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/flags\">Language</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/tree\">Hierarchy</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link disabled\"  routerLinkActive=\"active\" href=\"#\">Activity</a>\n  </li>\n</ul>\n<p style=\"padding:5px;\"></p>\n<router-outlet></router-outlet>"
+module.exports = "<ul class=\"nav nav-tabs nav-fill\">\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/network\">Network</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/flags\">Language</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\" routerLinkActive=\"active\" routerLink=\"/home/tree\">Hierarchy</a>\n  </li>\n  <li class=\"nav-item\">\n    <a class=\"nav-link\"  routerLinkActive=\"active\" routerLink=\"/home/gant\">Activity</a>\n  </li>\n</ul>\n<p style=\"padding:5px;\"></p>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -1704,7 +1767,7 @@ var TabviewComponent = (function () {
     return TabviewComponent;
 }());
 TabviewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-tabview',
         template: __webpack_require__("../../../../../src/app/tabview/tabview.component.html"),
         styles: [__webpack_require__("../../../../../src/app/tabview/tabview.component.css")]
@@ -1713,6 +1776,180 @@ TabviewComponent = __decorate([
 ], TabviewComponent);
 
 //# sourceMappingURL=tabview.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/timeline/timeData.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return tasks; });
+var tasks = [
+    { "startDate": new Date("Sun Dec 09 01:36:45 EST 2012"), "endDate": new Date("Sun Dec 09 02:36:45 EST 2012"), "taskName": "E Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 04:56:32 EST 2012"), "endDate": new Date("Sun Dec 09 06:35:47 EST 2012"), "taskName": "A Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 06:29:53 EST 2012"), "endDate": new Date("Sun Dec 09 06:34:04 EST 2012"), "taskName": "D Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 05:35:21 EST 2012"), "endDate": new Date("Sun Dec 09 06:21:22 EST 2012"), "taskName": "P Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 05:00:06 EST 2012"), "endDate": new Date("Sun Dec 09 05:05:07 EST 2012"), "taskName": "D Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 03:46:59 EST 2012"), "endDate": new Date("Sun Dec 09 04:54:19 EST 2012"), "taskName": "P Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 04:02:45 EST 2012"), "endDate": new Date("Sun Dec 09 04:48:56 EST 2012"), "taskName": "N Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 03:27:35 EST 2012"), "endDate": new Date("Sun Dec 09 03:58:43 EST 2012"), "taskName": "E Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 01:40:11 EST 2012"), "endDate": new Date("Sun Dec 09 03:26:35 EST 2012"), "taskName": "A Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 03:00:03 EST 2012"), "endDate": new Date("Sun Dec 09 03:09:51 EST 2012"), "taskName": "D Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 01:21:00 EST 2012"), "endDate": new Date("Sun Dec 09 02:51:42 EST 2012"), "taskName": "P Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 01:08:42 EST 2012"), "endDate": new Date("Sun Dec 09 01:33:42 EST 2012"), "taskName": "N Job", "status": "FAILED" },
+    { "startDate": new Date("Sun Dec 09 00:27:15 EST 2012"), "endDate": new Date("Sun Dec 09 00:54:56 EST 2012"), "taskName": "E Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 00:29:48 EST 2012"), "endDate": new Date("Sun Dec 09 00:44:50 EST 2012"), "taskName": "D Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 07:39:21 EST 2012"), "endDate": new Date("Sun Dec 09 07:43:22 EST 2012"), "taskName": "P Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 07:00:06 EST 2012"), "endDate": new Date("Sun Dec 09 07:05:07 EST 2012"), "taskName": "D Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 08:46:59 EST 2012"), "endDate": new Date("Sun Dec 09 09:54:19 EST 2012"), "taskName": "P Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 09:02:45 EST 2012"), "endDate": new Date("Sun Dec 09 09:48:56 EST 2012"), "taskName": "N Job", "status": "RUNNING" },
+    { "startDate": new Date("Sun Dec 09 08:27:35 EST 2012"), "endDate": new Date("Sun Dec 09 08:58:43 EST 2012"), "taskName": "E Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 08:40:11 EST 2012"), "endDate": new Date("Sun Dec 09 08:46:35 EST 2012"), "taskName": "A Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 08:00:03 EST 2012"), "endDate": new Date("Sun Dec 09 08:09:51 EST 2012"), "taskName": "D Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 10:21:00 EST 2012"), "endDate": new Date("Sun Dec 09 10:51:42 EST 2012"), "taskName": "P Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sun Dec 09 11:08:42 EST 2012"), "endDate": new Date("Sun Dec 09 11:33:42 EST 2012"), "taskName": "N Job", "status": "FAILED" },
+    { "startDate": new Date("Sun Dec 09 12:27:15 EST 2012"), "endDate": new Date("Sun Dec 09 12:54:56 EST 2012"), "taskName": "E Job", "status": "SUCCEEDED" },
+    { "startDate": new Date("Sat Dec 08 23:12:24 EST 2012"), "endDate": new Date("Sun Dec 09 00:26:13 EST 2012"), "taskName": "A Job", "status": "KILLED" }
+];
+//# sourceMappingURL=timeData.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/timeline/timeline.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/timeline/timeline.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/timeline/timeline.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__timeData__ = __webpack_require__("../../../../../src/app/timeline/timeData.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3__ = __webpack_require__("../../../../d3/build/d3.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_d3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_d3__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TimelineComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TimelineComponent = (function () {
+    function TimelineComponent() {
+        this.taskStatus = { "SUCCEEDED": "bar", "FAILED": "bar-failed", "RUNNING": "bar-running", "KILLED": "bar-killed" };
+        this.taskNames = ["D Job", "P Job", "E Job", "A Job", "N Job"];
+        __WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */].sort(function (a, b) { return a.endDate - b.endDate; });
+        this.maxDate = __WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */][__WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */].length - 1].endDate;
+        __WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */].sort(function (a, b) { return a.startDate - b.startDate; });
+        this.minDate = __WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */][0].startDate;
+        this.margin = { top: 20, right: 40, bottom: 20, left: 80 };
+        this.timeDomainStart = __WEBPACK_IMPORTED_MODULE_2_d3__["timeDay"].offset(new Date(), -3);
+        this.timeDomainEnd = __WEBPACK_IMPORTED_MODULE_2_d3__["timeHour"].offset(new Date(), +3);
+        this.timeDomainMode = "fit"; // fixed (broken) or fit
+        this.height = 500;
+        this.width = 960;
+        this.tickFormat = "%H:%M";
+    }
+    TimelineComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.initTimeDomain();
+        this.initAxis();
+        var svg = __WEBPACK_IMPORTED_MODULE_2_d3__["select"]("app-timeline")
+            .append("svg")
+            .attr("class", "chart")
+            .attr("width", this.width + this.margin.left + this.margin.right)
+            .attr("height", this.height + this.margin.top + this.margin.bottom)
+            .append("g")
+            .attr("class", "gantt-chart")
+            .attr("width", this.width + this.margin.left + this.margin.right)
+            .attr("height", this.height + this.margin.top + this.margin.bottom)
+            .attr("transform", "translate(" + this.margin.left + ", " + this.margin.top + ")");
+        svg.selectAll(".chart")
+            .data(__WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */], function (d) { return d.startDate + d.taskName + d.endDate; })
+            .enter()
+            .append("rect")
+            .attr("rx", 5)
+            .attr("ry", 5)
+            .attr("class", function (d) {
+            if (_this.taskStatus[d.status] == null) {
+                return "bar";
+            }
+            return _this.taskStatus[d.status];
+        })
+            .attr("y", 0)
+            .attr("transform", function (d) { return "translate(" + _this.x(d.startDate) + "," + _this.y(d.taskName) + ")"; })
+            .attr("height", function (d) { return 70; })
+            .attr("width", function (d) { return (_this.x(d.endDate) - _this.x(d.startDate)); });
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0, " + (this.height - this.margin.top - this.margin.bottom) + ")")
+            .transition()
+            .call(this.xAxis);
+        svg.append("g").attr("class", "y axis").transition().call(this.yAxis);
+    };
+    TimelineComponent.prototype.initAxis = function () {
+        this.x = __WEBPACK_IMPORTED_MODULE_2_d3__["scaleTime"]().domain([this.timeDomainStart, this.timeDomainEnd]).range([0, this.width]).clamp(true);
+        this.y = __WEBPACK_IMPORTED_MODULE_2_d3__["scaleBand"]().domain(this.taskNames).rangeRound([0, this.height - this.margin.top - this.margin.bottom], .1);
+        this.xAxis = __WEBPACK_IMPORTED_MODULE_2_d3__["axisBottom"]().scale(this.x).tickFormat(__WEBPACK_IMPORTED_MODULE_2_d3__["timeFormat"](this.tickFormat)).tickSize(8).tickPadding(8);
+        this.yAxis = __WEBPACK_IMPORTED_MODULE_2_d3__["axisLeft"]().scale(this.y).tickSize(0);
+    };
+    TimelineComponent.prototype.initTimeDomain = function () {
+        if (this.timeDomainMode === "fit") {
+            if (__WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */] === undefined || __WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */].length < 1) {
+                this.timeDomainStart = __WEBPACK_IMPORTED_MODULE_2_d3__["time"].day.offset(new Date(), -3);
+                this.timeDomainEnd = __WEBPACK_IMPORTED_MODULE_2_d3__["time"].hour.offset(new Date(), +3);
+                return;
+            }
+            __WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */].sort(function (a, b) {
+                return a.endDate - b.endDate;
+            });
+            this.timeDomainEnd = __WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */][__WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */].length - 1].endDate;
+            __WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */].sort(function (a, b) {
+                return a.startDate - b.startDate;
+            });
+            this.timeDomainStart = __WEBPACK_IMPORTED_MODULE_1__timeData__["a" /* tasks */][0].startDate;
+        }
+    };
+    return TimelineComponent;
+}());
+TimelineComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+        selector: 'app-timeline',
+        encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None,
+        template: __webpack_require__("../../../../../src/app/timeline/timeline.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/timeline/timeline.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], TimelineComponent);
+
+//# sourceMappingURL=timeline.component.js.map
 
 /***/ }),
 
@@ -1903,11 +2140,11 @@ var TreeComponent = (function () {
     return TreeComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* ViewChild */])('iptree'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('iptree'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], TreeComponent.prototype, "element", void 0);
 TreeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
         selector: 'app-tree',
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None,
         template: __webpack_require__("../../../../../src/app/tree/tree.component.html"),

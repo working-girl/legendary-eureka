@@ -3,9 +3,9 @@ var router = express.Router();
 var Node = require('../models/nodes.model');
 
 /* GET relations. */
-router.get('/', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
 
-    Node.find({"userid" : 4})
+    Node.find({"user" : req.params.id})
   			.exec(function(err, docs) {
 	  			if (err) {
 	  				return res.status(500).json({

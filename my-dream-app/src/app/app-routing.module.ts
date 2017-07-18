@@ -10,6 +10,8 @@ import { FlagsComponent } from './flags/flags.component';
 import { FlagChartComponent } from './flag-chart/flag-chart.component'
 import { CountryComponent } from './country/country.component';
 import { SearchcloudComponent } from './searchcloud/searchcloud.component';
+import { TimelineComponent } from './timeline/timeline.component';
+
 
 const routes: Routes = [
   {
@@ -36,7 +38,17 @@ const routes: Routes = [
   	  	},
   	  	{
   	  		path: 'network',
-  	  		component: NetworkComponent,
+  	  		component: NetworkComponent
+            /*children: [
+              {
+                path: 'nodes',
+                component: NetworkComponent
+              },
+              {
+                path: 'edges',
+                component: NetworkComponent
+              }              
+            ]*/
   	  	},
         {
           path: 'flags',
@@ -45,6 +57,10 @@ const routes: Routes = [
         {
           path: 'tree',
           component: TreeComponent,
+        },
+        {
+          path: 'gant',
+          component: TimelineComponent,
         }
   	  ] 
   }

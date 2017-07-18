@@ -13,20 +13,27 @@ export class NetworkService {
   constructor(private http: Http) { }
 
 
-  /*getUserRelations(id: string): Observable<any> {
+  /*getTestData(id: string): Observable<any> {
   	return this.http
   		.get('assets/gowalla/data.json', {})
   		.map( res => res.json())
   	}*/
   
-  /*get relations from mongodbd for specific user*/
-  getRelations(id:string): Observable<any> {
+  getNodes(id:string): Observable<any> {
 
-    console.log('requesting contacts on user: ' + id)
+    console.log('requesting nodes on user: ' + id)
 
-  	return this.http.get(`http://localhost:3001/my-dream-app/home/network/${id}`)
+  	return this.http.get(`http://localhost:3001/my-dream-app/home/network/nodes/${id}`)
               .map( (res: Response) => res.json())
               .catch( (error: Response) => Observable.throw(error.json()));
   }
 
+  getEdges(id:string): Observable<any> {
+
+    console.log('requesting edges on user: ' + id)
+
+    return this.http.get(`http://localhost:3001/my-dream-app/home/network/edges/${id}`)
+              .map( (res: Response) => res.json())
+              .catch( (error: Response) => Observable.throw(error.json()));
+  }
 }
