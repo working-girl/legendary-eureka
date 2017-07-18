@@ -10,6 +10,7 @@ import { FlagsComponent } from './flags/flags.component';
 import { FlagChartComponent } from './flag-chart/flag-chart.component'
 import { CountryComponent } from './country/country.component';
 import { SearchcloudComponent } from './searchcloud/searchcloud.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'searchcloud',
     component: SearchcloudComponent,
+  },
+  {
+    path: 'timeline',
+    component: TimelineComponent,
   },
   {
   	path: 'home',
