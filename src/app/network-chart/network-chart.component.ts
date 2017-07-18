@@ -75,7 +75,7 @@ export class NetworkChartComponent implements OnChanges, AfterViewInit {
       .data(this.graph.edges)
       .enter().append("line")
       .attr("stroke", "#999")
-      .attr("stroke-width", function(d) { return Math.sqrt(d.value);});
+      //.attr("stroke-width", function(d) { return Math.sqrt(d.value);});
 
     var node = g.append("g")
       .attr("class", "nodes")
@@ -83,7 +83,7 @@ export class NetworkChartComponent implements OnChanges, AfterViewInit {
       .data(this.graph.nodes)
       .enter().append("circle")
         .attr("r", 5)
-        .attr("fill", function(d) {return color(d.group); })
+        //.attr("fill", function(d) {return color(d.group); })
         .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
@@ -114,8 +114,8 @@ export class NetworkChartComponent implements OnChanges, AfterViewInit {
         link
             .attr("x1", function(d) { return d.source.x; })
             .attr("y1", function(d) { return d.source.y; })
-            .attr("x2", function(d) { return d.target.x; })
-            .attr("y2", function(d) { return d.target.y; });
+            .attr("x2", function(d) { return d.destination.x; })
+            .attr("y2", function(d) { return d.destination.y; });
 
         node
             .attr("cx", function(d) { return d.x; })

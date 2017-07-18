@@ -44,6 +44,7 @@ import { WordsService } from './flags/words.service';
     NetworkChartComponent,
     FlagsComponent,
     FlagChartComponent,
+    CountryComponent
  /*   TestD3Component,
     BrushZoomComponent,
     NetworkChart2Component*/
@@ -52,8 +53,7 @@ import { WordsService } from './flags/words.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
-    CountryComponent
+    HttpModule    
   ],
   providers: [SearchQuery, NetworkService, WordsService], //D3Service
   bootstrap: [AppComponent]

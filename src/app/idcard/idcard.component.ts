@@ -11,6 +11,7 @@ export class IdcardComponent implements OnInit {
   constructor(public searchinfo: SearchQuery) {}
 
   ngOnInit() {
+  	console.log('Active user : '+ this.searchinfo.getSearchId())
   }
 
   getActivity() {
