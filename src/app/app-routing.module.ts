@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CountryComponent } from './country/country.component';
 
 import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { NetworkComponent } from './network/network.component';
 import { StatsComponent } from './stats/stats.component';
+import { TreeComponent } from './tree/tree.component';
 import { FlagsComponent } from './flags/flags.component';
+import { FlagChartComponent } from './flag-chart/flag-chart.component'
+import { CountryComponent } from './country/country.component';
+import { SearchcloudComponent } from './searchcloud/searchcloud.component';
 
 const routes: Routes = [
   {
@@ -16,6 +19,14 @@ const routes: Routes = [
   {
     path: 'country',
     component: CountryComponent
+  },
+  {
+    path: 'tree',
+    component: TreeComponent,
+  },
+  {
+    path: 'searchcloud',
+    component: SearchcloudComponent,
   },
   {
   	path: 'home',
@@ -33,7 +44,7 @@ const routes: Routes = [
   	  	},
         {
           path: 'flags',
-          component: FlagsComponent
+          component: FlagsComponent,
         }
   	  ] 
   }
