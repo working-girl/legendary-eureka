@@ -20,7 +20,7 @@ export class NetworkService {
   	}*/
   
   /*get relations from mongodbd for specific user*/
-  getRelations(id:number): Observable<any> {
+  getRelations(id:string): Observable<any> {
 
     console.log('requesting contacts on user: ' + id)
 

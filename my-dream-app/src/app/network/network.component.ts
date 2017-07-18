@@ -18,7 +18,7 @@ export class NetworkComponent implements OnInit {
   	this.getNetworkData(this.userinfo.getSearchId())
   }
 
-  getNetworkData(id: number){
+  getNetworkData(id: string){
   	this.dataService.getRelations(id).subscribe(
     		data => {
           //this.networkData = data

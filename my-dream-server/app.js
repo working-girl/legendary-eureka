@@ -7,8 +7,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var relationRoutes = require('./routes/relation');
+var appRoutes = require('./routes/index');
+var edgesRoutes = require('./routes/edges');
+var nodesRoutes = require('./routes/nodes');
 
 var app = express();
 
@@ -29,8 +30,9 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/my-dream-app/home/network', relationRoutes);
-app.use('/', routes);
+//app.use('/my-dream-app/home/network', nodesRoutes);
+app.use('/my-dream-app/home/network', edgesRoutes);
+app.use('/', appRoutes);
 
 
 /// catch 404 and forwarding to error handler

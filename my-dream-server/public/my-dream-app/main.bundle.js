@@ -1116,7 +1116,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/network/network.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "{{networkData | json}}\n<!--<app-network-chart *ngIf=\"networkData\" [graph]=\"networkData\"></app-network-chart>-->\n\n\n"
+module.exports = "\n<button class=\"btn btn-outline-primary\">Fetch Nodes</button>\n<button class=\"btn btn-outline-success\">Fetch Edges</button>\n<button class=\"btn btn-outline-danger\">Build Network</button>\n<!--<app-network-chart *ngIf=\"networkData\" [graph]=\"networkData\"></app-network-chart>-->\n\n\n"
 
 /***/ }),
 

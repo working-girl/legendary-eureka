@@ -1,15 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var Relation = require('../models/relations.model');
-var Checkin = require('../models/checkins.model');
+var Edge = require('../models/edges.model')
 
 /* GET relations. */
 router.get('/:id', function(req, res, next) {
 
 	console.log('Der hentes data paa bruger: '+req.params.id)
 
-    Relation.find({"source" : req.params.id})
-  			.exec(function(err, relations) {
+    Edge.find({"source" : req.params.id})
+  			.exec(function(err, docs) {
 	  			if (err) {
 	  				return res.status(500).json({
 	  					title: 'An error occurred',
@@ -18,7 +17,7 @@ router.get('/:id', function(req, res, next) {
 	  			}
 	  			res.status(200).json({
 	  				message: 'Success',
-	  				relations: relations
+	  				edges: docs
   			});
   		});	
 
