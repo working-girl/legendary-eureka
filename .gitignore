@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/my-dream-server/public
 
 # dependencies
 /node_modules
