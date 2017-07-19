@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/my-dream-server/public/my-dream-app/*.bundle.js
 
 # dependencies
 /node_modules
