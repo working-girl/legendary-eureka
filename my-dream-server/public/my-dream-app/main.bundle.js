@@ -156,7 +156,7 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -338,7 +338,7 @@ var CountryComponent = (function () {
     return CountryComponent;
 }());
 CountryComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-country',
         template: __webpack_require__("../../../../../src/app/country/country.component.html"),
         styles: [__webpack_require__("../../../../../src/app/country/country.component.css")]
@@ -399,7 +399,7 @@ var DescCardComponent = (function () {
     return DescCardComponent;
 }());
 DescCardComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-desc-card',
         template: __webpack_require__("../../../../../src/app/desc-card/desc-card.component.html"),
         styles: [__webpack_require__("../../../../../src/app/desc-card/desc-card.component.css")]
@@ -527,7 +527,7 @@ var FlagChartComponent = (function () {
     return FlagChartComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('flagcloud'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewChild */])('flagcloud'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], FlagChartComponent.prototype, "element", void 0);
 __decorate([
@@ -539,7 +539,7 @@ __decorate([
     __metadata("design:type", Object)
 ], FlagChartComponent.prototype, "words", void 0);
 FlagChartComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-flag-chart',
         template: __webpack_require__("../../../../../src/app/flag-chart/flag-chart.component.html"),
         styles: [__webpack_require__("../../../../../src/app/flag-chart/flag-chart.component.css")]
@@ -630,7 +630,7 @@ var FlagsComponent = (function () {
     return FlagsComponent;
 }());
 FlagsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-flags',
         template: __webpack_require__("../../../../../src/app/flags/flags.component.html"),
         styles: [__webpack_require__("../../../../../src/app/flags/flags.component.css")]
@@ -722,7 +722,7 @@ var HomeComponent = (function () {
     return HomeComponent;
 }());
 HomeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-home',
         template: __webpack_require__("../../../../../src/app/home/home.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/home.component.css")]
@@ -790,7 +790,7 @@ var IdcardComponent = (function () {
     return IdcardComponent;
 }());
 IdcardComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-idcard',
         template: __webpack_require__("../../../../../src/app/idcard/idcard.component.html"),
         styles: [__webpack_require__("../../../../../src/app/idcard/idcard.component.css")]
@@ -884,7 +884,7 @@ var NavStatsComponent = (function () {
     return NavStatsComponent;
 }());
 NavStatsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-nav-stats',
         template: __webpack_require__("../../../../../src/app/nav-stats/nav-stats.component.html"),
         styles: [__webpack_require__("../../../../../src/app/nav-stats/nav-stats.component.css")]
@@ -948,7 +948,7 @@ var NavbarComponent = (function () {
     return NavbarComponent;
 }());
 NavbarComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-navbar',
         template: __webpack_require__("../../../../../src/app/navbar/navbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/navbar/navbar.component.css")]
@@ -1115,7 +1115,7 @@ var NetworkChartComponent = (function () {
     return NetworkChartComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('network'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewChild */])('network'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], NetworkChartComponent.prototype, "element", void 0);
 __decorate([
@@ -1123,7 +1123,7 @@ __decorate([
     __metadata("design:type", Object)
 ], NetworkChartComponent.prototype, "edges", void 0);
 NetworkChartComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-network-chart',
         template: __webpack_require__("../../../../../src/app/network-chart/network-chart.component.html"),
         styles: [__webpack_require__("../../../../../src/app/network-chart/network-chart.component.css")],
@@ -1216,11 +1216,11 @@ var NetworkComponent = (function () {
     return NetworkComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3__network_chart_network_chart_component__["a" /* NetworkChartComponent */]),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_3__network_chart_network_chart_component__["a" /* NetworkChartComponent */]),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__network_chart_network_chart_component__["a" /* NetworkChartComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__network_chart_network_chart_component__["a" /* NetworkChartComponent */]) === "function" && _a || Object)
 ], NetworkComponent.prototype, "networkChartComponent", void 0);
 NetworkComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-network',
         template: __webpack_require__("../../../../../src/app/network/network.component.html"),
         styles: [__webpack_require__("../../../../../src/app/network/network.component.css")],
@@ -1346,7 +1346,7 @@ var SearchbarComponent = (function () {
     return SearchbarComponent;
 }());
 SearchbarComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-searchbar',
         template: __webpack_require__("../../../../../src/app/searchbar/searchbar.component.html"),
         styles: [__webpack_require__("../../../../../src/app/searchbar/searchbar.component.css")]
@@ -1526,11 +1526,11 @@ var SearchcloudComponent = (function () {
     return SearchcloudComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('flagcloud'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewChild */])('flagcloud'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], SearchcloudComponent.prototype, "element", void 0);
 SearchcloudComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-searchcloud',
         template: __webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.html"),
         styles: [__webpack_require__("../../../../../src/app/searchcloud/searchcloud.component.css")]
@@ -1706,7 +1706,7 @@ var StatsComponent = (function () {
     return StatsComponent;
 }());
 StatsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-stats',
         template: __webpack_require__("../../../../../src/app/stats/stats.component.html"),
         styles: [__webpack_require__("../../../../../src/app/stats/stats.component.css")]
@@ -1767,7 +1767,7 @@ var TabviewComponent = (function () {
     return TabviewComponent;
 }());
 TabviewComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-tabview',
         template: __webpack_require__("../../../../../src/app/tabview/tabview.component.html"),
         styles: [__webpack_require__("../../../../../src/app/tabview/tabview.component.css")]
@@ -1940,7 +1940,7 @@ var TimelineComponent = (function () {
     return TimelineComponent;
 }());
 TimelineComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-timeline',
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None,
         template: __webpack_require__("../../../../../src/app/timeline/timeline.component.html"),
@@ -2140,11 +2140,11 @@ var TreeComponent = (function () {
     return TreeComponent;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* ViewChild */])('iptree'),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_15" /* ViewChild */])('iptree'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* ElementRef */]) === "function" && _a || Object)
 ], TreeComponent.prototype, "element", void 0);
 TreeComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_13" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_14" /* Component */])({
         selector: 'app-tree',
         encapsulation: __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ViewEncapsulation */].None,
         template: __webpack_require__("../../../../../src/app/tree/tree.component.html"),
