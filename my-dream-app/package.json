@@ -8,8 +8,7 @@
     "build": "ng build",
     "build:dev": "ng build",
     "build:prod": "ng build -prod",
-    "build:fullstack":"ng build --outputPath ../my-dream-server/public/my-dream-app --baseHref /my-dream-app/",
-    
+    "build:fullstack": "ng build --outputPath ../my-dream-server/public/my-dream-app --baseHref /my-dream-app/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -17,10 +16,8 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^4.0.0",
-    "@angular/cli": "^1.2.1",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
-    "@angular/compiler-cli": "^4.2.6",
     "@angular/core": "^4.0.0",
     "@angular/forms": "^4.0.0",
     "@angular/http": "^4.0.0",

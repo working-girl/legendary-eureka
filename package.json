@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "fullstack:build": "cd ./my-dream-app && npm run build:fullstack",
-    "start" :"npm run fullstack:build && cd ./my-dream-server && npm run start"
+    "start": "npm run fullstack:build && cd ./my-dream-server && npm run start"
   },
   "repository": {
     "type": "git",

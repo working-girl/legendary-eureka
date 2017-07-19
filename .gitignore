@@ -36,6 +36,7 @@ package-lock.json
 /src/assets/gowalla/data.json
 /src/assets/gowalla/loc-gowalla_edges.txt
 /src/assets/gowalla/loc-gowalla_totalCheckins.txt
+/my-dream-server/public/my-dream-app/
 
 # e2e
 /e2e/*.js
