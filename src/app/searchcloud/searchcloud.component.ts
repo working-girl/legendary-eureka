@@ -30,7 +30,6 @@ export class SearchcloudComponent implements OnInit {
     this.height = 400;
     this.fill = d3.scaleOrdinal(d3.schemeCategory20);
     this.MAX_TRIES = (this.width > 400) ? 6 : 3;
-
     this.generateSkillCloud(0);
   }
 
@@ -39,18 +38,18 @@ export class SearchcloudComponent implements OnInit {
   	let textfilter = (<HTMLInputElement>document.getElementById('filter')).value;
   	let filterSkillsvar = _.filter(skillsData, (skill) => { return !textfilter || skill.name.toLowerCase().indexOf(textfilter.toLowerCase()) >= 0; });
 
-  	// let skillsToDraw = this.transformToCloudLayoutObjects(filterSkillsvar, retryCycle);
+  	// let skillsToDraw = transformToCloudLayoutObjects(filterSkillsvar, retryCycle);
 
-	let skillsToDraw = _.map(filterSkillsvar, (skill, retryCycle) => {
+	  let skillsToDraw = _.map(filterSkillsvar, (skill) => {
         let retval = {
     	    text: skill.name.toLowerCase() + ':' + skill.years + 'y',
-            size: this.toFontSize(skill.years, skill.relevancy, retryCycle)
+          size: this.toFontSize(skill.years, skill.relevancy, retryCycle)
         };
         return retval;
     });
 
     let layout: any;
-	layout = d3v4cloud.cloud()
+	  layout = d3v4cloud.cloud()
         .size([this.width, this.height])
         .words(skillsToDraw)
         .rotate(() => { return (~~(Math.random() * 6) - 2.5) * 30; })
@@ -58,12 +57,12 @@ export class SearchcloudComponent implements OnInit {
         .fontSize((d) => { return d.size; })
         .on("end", (fittedSkills) => {
             // check if all words fit and are included
-            if (fittedSkills.length == skillsToDraw.length) {
+            if (fittedSkills.length == skillsToDraw.length) { // 75, 103
                 this.drawSkillCloud(fittedSkills); // finished
             }
             else if (!retryCycle || retryCycle < this.MAX_TRIES) {
                 // words are missing due to the random placement and limited room space
-                console.debug('retrying');
+                console.debug('retrying... got: ' + fittedSkills.length + '/' + skillsToDraw.length);
                 // try again and start counting retries
                 this.generateSkillCloud((retryCycle || 1) + 1);
             }
@@ -83,12 +82,13 @@ export class SearchcloudComponent implements OnInit {
      *    .2 vs 1.5 could work for example).
      */
     toFontSize(years, relevancy, retryCycle) {
+      //console.log(retryCycle)
     	// translate years scale to font size scale and apply relevancy factor
     	let linearSize = (((years - this.minyears) / (this.maxyears - this.minyears)) * (this.maxfont - this.minfont) * relevancy) + this.minfont;
     	// make the difference between small sizes and bigger sizes more pronounced for effect
     	let polarizedSize = Math.pow(linearSize / 8, 3);
     	// reduce the size as the retry cycles ramp up (due to too many words in too small space)
-    	let reduceSize = polarizedSize; //* ((this.MAX_TRIES - retryCycle) / this.MAX_TRIES);
+    	let reduceSize = polarizedSize * ((this.MAX_TRIES - retryCycle) / this.MAX_TRIES);
     	return ~~reduceSize;
     }
         
@@ -103,13 +103,13 @@ export class SearchcloudComponent implements OnInit {
     	    .data(words)
     	    .enter().append("text")
     	    .style("font-size", (d) => { return d.size + "px"; })
-    	    .style("-webkit-touch-callout", "none")
+    	    /*.style("-webkit-touch-callout", "none")
     	    .style("-webkit-user-select", "none")
     	    .style("-khtml-user-select", "none")
     	    .style("-moz-user-select", "none")
     	    .style("-ms-user-select", "none")
     	    .style("user-select", "none")
-    	    .style("cursor", "default")
+    	    .style("cursor", "default")*/
     	    .style("font-family", "Impact")
     	    .style("fill", (d, i) => { return this.fill(i); })
     	    .attr("text-anchor", "middle")
