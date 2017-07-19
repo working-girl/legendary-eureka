@@ -4,7 +4,7 @@
 /dist
 /tmp
 /out-tsc
-/my-dream-server/public/my-dream-app/*.bundle.js
+/my-dream-server/public/my-dream-app/*.bundle.*
 
 # dependencies
 /node_modules
