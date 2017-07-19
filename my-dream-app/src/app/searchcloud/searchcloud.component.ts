@@ -56,7 +56,7 @@ export class SearchcloudComponent implements OnInit, OnChanges {
 
   	// let skillsToDraw = this.transformToCloudLayoutObjects(filterSkillsvar, retryCycle);
 
-	  let skillsToDraw = _.map(filterSkillsvar, (skill, retryCycle) => {
+	let skillsToDraw = _.map(filterSkillsvar, (skill) => {
         let retval = {
     	    text: skill.name.toLowerCase() + ':' + skill.years + 'y',
             size: this.toFontSize(skill.years, skill.relevancy, retryCycle)
@@ -65,8 +65,7 @@ export class SearchcloudComponent implements OnInit, OnChanges {
     });
 
     let layout: any;
-	      
-      layout = d3v4cloud.cloud()
+    layout = d3v4cloud.cloud()
         .size([this.width, this.height])
         .words(skillsToDraw)
         .rotate(() => { return (~~(Math.random() * 6) - 2.5) * 30; })
@@ -74,12 +73,12 @@ export class SearchcloudComponent implements OnInit, OnChanges {
         .fontSize((d) => { return d.size; })
         .on("end", (fittedSkills) => {
             // check if all words fit and are included
-            if (fittedSkills.length == skillsToDraw.length) {
+            if (fittedSkills.length == skillsToDraw.length) { // 75, 103
                 this.drawSkillCloud(fittedSkills); // finished
             }
             else if (!retryCycle || retryCycle < this.MAX_TRIES) {
                 // words are missing due to the random placement and limited room space
-                console.debug('retrying');
+                console.debug('retrying... got: ' + fittedSkills.length + '/' + skillsToDraw.length);
                 // try again and start counting retries
                 this.generateSkillCloud((retryCycle || 1) + 1);
             }
@@ -104,7 +103,7 @@ export class SearchcloudComponent implements OnInit, OnChanges {
     	// make the difference between small sizes and bigger sizes more pronounced for effect
     	let polarizedSize = Math.pow(linearSize / 8, 3);
     	// reduce the size as the retry cycles ramp up (due to too many words in too small space)
-    	let reduceSize = polarizedSize; //* ((this.MAX_TRIES - retryCycle) / this.MAX_TRIES);
+    	let reduceSize = polarizedSize * ((this.MAX_TRIES - retryCycle) / this.MAX_TRIES);
     	return ~~reduceSize;
     }
         
@@ -134,13 +133,13 @@ export class SearchcloudComponent implements OnInit, OnChanges {
     	    .data(words)
     	    .enter().append("text")
     	    .style("font-size", (d) => { return d.size + "px"; })
-    	    .style("-webkit-touch-callout", "none")
+            /*.style("-webkit-touch-callout", "none")
     	    .style("-webkit-user-select", "none")
     	    .style("-khtml-user-select", "none")
     	    .style("-moz-user-select", "none")
     	    .style("-ms-user-select", "none")
     	    .style("user-select", "none")
-    	    .style("cursor", "default")
+    	    .style("cursor", "default")*/
     	    .style("font-family", "Impact")
     	    .style("fill", (d, i) => { return this.fill(i); })
     	    .attr("text-anchor", "middle")
