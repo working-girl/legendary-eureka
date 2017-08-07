@@ -81,9 +81,10 @@ export class FinalcloudComponent implements OnInit, AfterViewInit {
   draw(words:any) {
   	let svg = d3.select("#chart")
       .append("svg")
+      /*.attr("viewBox", `0 0 ${this.width} ${this.height}`);*/
         .attr("width", this.width + this.margin.left + this.margin.right)
-        .attr("height", this.height + this.margin.top + this.margin.bottom);
-    let con = svg.append("g")
+        .attr("height", this.height + this.margin.top + this.margin.bottom);/**/
+    let con = svg.append("g");
     
     let zoom_handler = d3.zoom().on("zoom", zoom_actions);
     zoom_handler(svg)
@@ -93,7 +94,9 @@ export class FinalcloudComponent implements OnInit, AfterViewInit {
     }
 
     con
-        .attr("transform", "translate(" + [this.width >> 1, this.height >> 1] + ")")
+        //	.attr("transform", "translate(" + [this.width >> 1, this.height >> 1] + ")")
+      .attr("width", this.width)
+      .attr("height", this.height)
       .selectAll("text")
         .data(words)
       .enter().append("text")
@@ -101,10 +104,13 @@ export class FinalcloudComponent implements OnInit, AfterViewInit {
         .style("font-family", "Impact")
         .style("fill", (d, i) => { return this.fill(i); })
         .attr("text-anchor", "middle")
-        .attr("transform", (d) => { return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")"; })
+        .attr("transform", (d) => { return "translate(" + [d.x+this.width/2, d.y+this.height/2] + ")rotate(" + d.rotate + ")"; })
         .text((d) => { return d.key; });
     
-    
+    /*let svgbb = document.getElementsByTagName("svg")[0];
+    let bbox = svg.getBBox();
+    let viewBox = [bbox.x, bbox.y, bbox.width, bbox.height].join(" ");
+    svg.setAttribute("viewBox", viewBox);*/
   }
 
 }
