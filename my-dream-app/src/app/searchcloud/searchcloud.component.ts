@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnChanges, ViewChild, ViewEncapsulation, ElementRef } from '@angular/core';
 import { skillsData } from './skillsData';
 import * as d3 from 'd3';
 import * as d3v4cloud from 'd3-v4-cloud';
@@ -9,14 +9,13 @@ import * as _ from 'lodash';
   templateUrl: './searchcloud.component.html',
   styleUrls: ['./searchcloud.component.css']
 })
-export class SearchcloudComponent implements OnInit, OnChanges {
+export class SearchcloudComponent implements OnInit, OnChanges, AfterViewInit {
 
   @ViewChild('flagcloud') element: ElementRef
 
-  private margin: any 
-  private host: d3.Selection
-  private svg: d3.Selection
-
+  private margin: any;
+  private host: d3.Selection;
+  private svg: d3.Selection;
   private minyears:any;
   private maxyears:any;
   private minfont:number;
@@ -25,7 +24,7 @@ export class SearchcloudComponent implements OnInit, OnChanges {
   private height:number;
   private fill:any;
   private MAX_TRIES:any;
-  private htmlElement: HTMLElement  
+  private htmlElement: HTMLElement;
 
   constructor() { }
 
@@ -34,7 +33,7 @@ export class SearchcloudComponent implements OnInit, OnChanges {
     this.host = d3.select(this.htmlElement)  
     this.margin = { top: 5, bottom: 0, left: 0, right: 0 }
     this.width = this.htmlElement.clientWidth - this.margin.left - this.margin.right
-    this.height = this.width * 0.5 - this.margin.top - this.margin.bottom      
+    this.height =this.width * 0.5 - this.margin.top - this.margin.bottom      
 
   	this.minyears = _.min(_.map(skillsData, 'years'));
     this.maxyears = _.max(_.map(skillsData, 'years'));
@@ -43,7 +42,9 @@ export class SearchcloudComponent implements OnInit, OnChanges {
 
     this.fill = d3.scaleOrdinal(d3.schemeCategory20);
     this.MAX_TRIES = (this.width > 400) ? 6 : 3;
+  }
 
+  ngAfterViewInit(): void {
     this.generateSkillCloud(0);
   }
 
@@ -56,10 +57,10 @@ export class SearchcloudComponent implements OnInit, OnChanges {
 
   	// let skillsToDraw = this.transformToCloudLayoutObjects(filterSkillsvar, retryCycle);
 
-	let skillsToDraw = _.map(filterSkillsvar, (skill) => {
+	  let skillsToDraw = _.map(filterSkillsvar, (skill) => {
         let retval = {
     	    text: skill.name.toLowerCase() + ':' + skill.years + 'y',
-            size: this.toFontSize(skill.years, skill.relevancy, retryCycle)
+          size: this.toFontSize(skill.years, skill.relevancy, retryCycle)
         };
         return retval;
     });
@@ -112,7 +113,9 @@ export class SearchcloudComponent implements OnInit, OnChanges {
     	//d3.select("#cloud svg").remove();
       this.host.html('')
       this.svg = this.host.append("svg")
-      .attr("viewBox", `0 0 ${this.width} ${this.height}`)      
+      .attr("viewBox", `0 0 ${this.width} ${this.height}`)
+      /*.attr("width", `${this.width}`)
+      .attr("height", `${this.height}`)*/ // force smaller svg
    	
       let con = this.svg.append("g")
 
