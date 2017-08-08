@@ -8,6 +8,7 @@ import * as d3 from 'd3';
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.css']
 })
+
 export class TimelineComponent implements OnInit {
   private maxDate:any;
   private minDate:any;
@@ -36,7 +37,7 @@ export class TimelineComponent implements OnInit {
     this.margin = { top:20, right:40, bottom:20, left:80 };
     this.timeDomainStart = d3.timeDay.offset(new Date(),-3);
     this.timeDomainEnd = d3.timeHour.offset(new Date(),+3);
-    this.timeDomainMode = "fit";// fixed (broken) or fit
+    this.timeDomainMode = "fit";// fixed (broken LOL) or fit
     this.height = 500;
     this.width = 960;
     this.tickFormat = "%H:%M";
@@ -73,12 +74,15 @@ export class TimelineComponent implements OnInit {
       .attr("width", (d) => { return (this.x(d.endDate) - this.x(d.startDate)); });
 
     svg.append("g")
-       .attr("class", "x axis")
-       .attr("transform", "translate(0, " + (this.height - this.margin.top - this.margin.bottom) + ")")
-       .transition()
-       .call(this.xAxis);
+      .attr("class", "x axis")
+      .attr("transform", "translate(0, " + (this.height - this.margin.top - this.margin.bottom) + ")")
+      .transition()
+      .call(this.xAxis);
 
-    svg.append("g").attr("class", "y axis").transition().call(this.yAxis);
+    svg.append("g")
+      .attr("class", "y axis")
+      .transition()
+      .call(this.yAxis);
   }
 
   initAxis() {
@@ -93,15 +97,10 @@ export class TimelineComponent implements OnInit {
       if (tasks === undefined || tasks.length < 1) {
         this.timeDomainStart = d3.time.day.offset(new Date(), -3);
         this.timeDomainEnd = d3.time.hour.offset(new Date(), +3);
-        return;
       }
-      tasks.sort(function(a:any, b:any) {
-        return a.endDate - b.endDate;
-      });
+      tasks.sort((a:any, b:any) => { return a.endDate - b.endDate; });
       this.timeDomainEnd = tasks[tasks.length - 1].endDate;
-      tasks.sort(function(a:any, b:any) {
-        return a.startDate - b.startDate;
-      });
+      tasks.sort((a:any, b:any) => { return a.startDate - b.startDate; });
       this.timeDomainStart = tasks[0].startDate;
     }
   }

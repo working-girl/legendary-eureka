@@ -94,7 +94,7 @@ export class FinalcloudComponent implements OnInit, AfterViewInit {
     }
 
     con
-        //	.attr("transform", "translate(" + [this.width >> 1, this.height >> 1] + ")")
+      // .attr("transform", "translate(" + [this.width >> 1, this.height >> 1] + ")")
       .attr("width", this.width)
       .attr("height", this.height)
       .selectAll("text")

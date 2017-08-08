@@ -27,6 +27,7 @@ import { TreeComponent } from './tree/tree.component';
 import { SearchcloudComponent } from './searchcloud/searchcloud.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { FinalcloudComponent } from './finalcloud/finalcloud.component';
+import { CountrycloudComponent } from './countrycloud/countrycloud.component';
 
 // import { D3Service } from 'd3-ng2-service';
 //import { TestD3Component } from './test-d3/test-d3.component';
@@ -54,7 +55,8 @@ import { FinalcloudComponent } from './finalcloud/finalcloud.component';
     TreeComponent,
     SearchcloudComponent,
     TimelineComponent,
-    FinalcloudComponent
+    FinalcloudComponent,
+    CountrycloudComponent
   ],
   imports: [
     BrowserModule,
