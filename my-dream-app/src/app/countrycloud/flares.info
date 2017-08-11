@@ -34,3 +34,6 @@ jq --slurp --raw-input --raw-output \
            "green": .[4],
            "red": .[5]})' \
   sdss1738478.csv > sdss1738478.json
+
+
+  split(",") | if .[1] == "" then { (.[0]) : { } } else { (.[0]) : (.[1]|tonumber) } end
