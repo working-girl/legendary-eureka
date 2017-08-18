@@ -11,7 +11,7 @@ import { FlagChartComponent } from './flag-chart/flag-chart.component'
 import { CountryComponent } from './country/country.component';
 import { SearchcloudComponent } from './searchcloud/searchcloud.component';
 import { FinalcloudComponent } from './finalcloud/finalcloud.component';
-import { CountrycloudComponent } from './countrycloud/countrycloud.component';
+import { TreemapComponent } from './treemap/treemap.component';
 import { TimelineComponent } from './timeline/timeline.component';
 
 
@@ -29,12 +29,8 @@ const routes: Routes = [
     component: SearchcloudComponent,
   },
   {
-    path: 'finalcloud',
-    component: FinalcloudComponent,
-  },
-  {
-    path: 'countrycloud',
-    component: CountrycloudComponent,
+    path: 'treemap',
+    component: TreemapComponent,
   },
   {
   	path: 'home',
